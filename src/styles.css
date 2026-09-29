@@ -1,3 +1,65 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import 'tailwindcss';
+
+@font-face {
+  font-family: 'Dune Rise';
+  src: url('/fonts/dune-rise.ttf') format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SquareFont';
+  src: url('/fonts/squarefont.ttf') format('truetype');
+  font-display: swap;
+}
+
+/* Tokens do mood board: laboratório limpo (lab-*) x metal sujo (rust-*). */
+@theme {
+  --font-display: 'Dune Rise', ui-sans-serif, system-ui, sans-serif;
+  --font-square: 'SquareFont', ui-monospace, monospace;
+
+  /* Superfícies clínicas */
+  --color-lab-50: #f7f3ee;
+  --color-lab-100: #e6ded4;
+  --color-lab-300: #c9bfb4;
+  --color-lab-600: #6b625b;
+  --color-lab-900: #1f1d1b;
+  --color-charcoal: #2f363a;
+
+  /* Ferrugem, cobre e fios expostos */
+  --color-rust-400: #bd7e58;
+  --color-rust-500: #a9512d;
+  --color-rust-600: #cc4a2b;
+  --color-rust-800: #6b2a22;
+  --color-lava: #803833;
+  --color-wire-yellow: #d3a865;
+  --color-wire-green: #8fae84;
+
+  --animate-surgir: surgir 0.4s ease-out both;
+  --animate-varredura: varredura 4s ease-in-out infinite;
+
+  /* Linha de leitura que percorre o visor do robô */
+  @keyframes varredura {
+    0%,
+    100% {
+      top: 4%;
+    }
+    50% {
+      top: 96%;
+    }
+  }
+
+  @keyframes surgir {
+    from {
+      opacity: 0;
+      transform: translateY(0.5rem);
+    }
+  }
+}
+
+@layer base {
+  html {
+    @apply bg-lab-50 text-lab-900 font-square antialiased;
+  }
+}

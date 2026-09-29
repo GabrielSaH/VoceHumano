@@ -1,0 +1,136 @@
+<section class="motion-safe:animate-surgir">
+  <p class="text-[0.65rem] uppercase tracking-[0.3em] text-rust-600">
+    [ Documento 03 // Protocolo de avaliação ]
+  </p>
+  <h1 class="mt-4 font-display text-3xl leading-tight tracking-[0.12em] text-lab-900 sm:text-5xl">
+    <span class="block">TESTE DE</span>
+    <span class="block">TURING INVERSO</span>
+  </h1>
+  <p class="mt-5 max-w-2xl text-sm leading-relaxed text-lab-600">
+    Em 1950, Alan Turing propôs um teste para descobrir se uma máquina conseguia se passar por
+    humana. Aqui, quem aplica o teste é a máquina. Ela vai observar suas escolhas diante de vinte
+    dilemas e decidir se quem responde do outro lado ainda é humano.
+  </p>
+
+  <dl class="mt-8 grid border-2 border-lab-900 text-xs sm:grid-cols-3">
+    <div class="border-b-2 border-lab-900 p-3 sm:border-b-0 sm:border-r-2">
+      <dt class="text-[0.65rem] tracking-widest text-rust-600">20 DILEMAS</dt>
+      <dd class="mt-1 text-lab-900">Sorteados a cada aplicação.</dd>
+    </div>
+    <div class="border-b-2 border-lab-900 p-3 sm:border-b-0 sm:border-r-2">
+      <dt class="text-[0.65rem] tracking-widest text-rust-600">SEM RETORNO</dt>
+      <dd class="mt-1 text-lab-900">Cada escolha é definitiva.</dd>
+    </div>
+    <div class="bg-lab-900 p-3 text-lab-50">
+      <dt class="text-[0.65rem] tracking-widest text-wire-yellow">SEM PISTAS</dt>
+      <dd class="mt-1">A máquina sabe o que está medindo. Você, não.</dd>
+    </div>
+  </dl>
+
+  @if (bloqueado()) {
+    <!-- Tentativa única: este navegador já foi avaliado -->
+    <div class="mt-10 border-2 border-lab-900 bg-white p-5 sm:p-6">
+      <p class="text-[0.65rem] uppercase tracking-[0.3em] text-rust-600">[ Avaliação encerrada ]</p>
+      <p class="mt-3 max-w-xl text-sm leading-relaxed text-lab-900">
+        Este navegador já passou pelo teste. A máquina não avalia o mesmo sujeito duas vezes: a
+        primeira resposta é a que conta.
+      </p>
+      <a
+        routerLink="/humanidade"
+        class="mt-5 inline-flex items-center justify-center gap-2 border-2 border-lab-900 bg-lab-900 px-5 py-2.5 text-sm uppercase tracking-widest text-lab-50 transition-colors hover:border-rust-600 hover:bg-rust-600 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-rust-600"
+      >
+        <span aria-hidden="true">[</span> Ver a humanidade <span aria-hidden="true">]</span>
+      </a>
+    </div>
+  } @else {
+    <!-- Formulário: cada declaração é um controle com Validators.requiredTrue -->
+    <form class="mt-10" [formGroup]="form" (ngSubmit)="enviar()" novalidate>
+      <fieldset>
+        <legend class="text-[0.65rem] uppercase tracking-[0.3em] text-lab-600">
+          Declarações obrigatórias
+        </legend>
+        <div class="mt-3 grid gap-3">
+          @for (termo of termos; track termo.id) {
+            @let controle = form.controls[termo.id];
+            <label
+              class="flex cursor-pointer items-start gap-4 border-2 bg-white px-4 py-3.5 text-sm text-lab-900 transition-colors hover:border-rust-600 has-checked:border-lab-900 has-checked:bg-lab-900 has-checked:text-lab-50 has-focus-visible:outline-2 has-focus-visible:outline-offset-2 has-focus-visible:outline-rust-600"
+              [class]="controle.invalid && controle.touched ? 'border-rust-600' : 'border-lab-900'"
+            >
+              <span class="relative mt-0.5 flex size-5 shrink-0 items-center justify-center">
+                <input
+                  type="checkbox"
+                  [formControlName]="termo.id"
+                  class="peer size-5 cursor-pointer appearance-none border-2 border-rust-600 bg-lab-50 checked:border-wire-yellow checked:bg-transparent focus:outline-none"
+                />
+                <!-- marcação em X, como um carimbo -->
+                <span
+                  class="pointer-events-none absolute hidden text-xs leading-none text-wire-yellow peer-checked:block"
+                  aria-hidden="true"
+                  >X</span
+                >
+              </span>
+              <span class="leading-relaxed">{{ termo.texto }}</span>
+            </label>
+          }
+        </div>
+      </fieldset>
+
+      <div class="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
+        <button
+          type="submit"
+          [disabled]="!podeIniciar()"
+          class="inline-flex items-center justify-center gap-2 border-2 border-lab-900 bg-lab-900 px-5 py-2.5 text-sm uppercase tracking-widest text-lab-50 transition-colors enabled:hover:border-rust-600 enabled:hover:bg-rust-600 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-rust-600 disabled:cursor-not-allowed disabled:opacity-30"
+        >
+          <span aria-hidden="true">[</span> Iniciar teste <span aria-hidden="true">]</span>
+        </button>
+        <a
+          routerLink="/leis"
+          class="text-xs uppercase tracking-widest text-lab-600 underline decoration-rust-500 decoration-2 underline-offset-4 hover:text-rust-600"
+        >
+          Revisar as leis antes
+        </a>
+      </div>
+
+      <!-- Situação do formulário e da API -->
+      <p class="mt-4 flex items-center gap-2 text-[0.7rem] text-lab-600" aria-live="polite">
+        @switch (estadoDilemas()) {
+          @case ('carregando') {
+            <span class="size-1.5 animate-pulse bg-rust-600" aria-hidden="true"></span>
+            Carregando os dilemas...
+          }
+          @case ('erro') {
+            <span class="size-1.5 bg-rust-600" aria-hidden="true"></span>
+            Não foi possível carregar os dilemas.
+            <button
+              type="button"
+              (click)="recarregar.emit()"
+              class="uppercase tracking-widest text-lab-900 underline decoration-rust-500 decoration-2 underline-offset-4 hover:text-rust-600"
+            >
+              Tentar novamente
+            </button>
+          }
+          @default {
+            @if (!formValido()) {
+              <span class="size-1.5 bg-lab-300" aria-hidden="true"></span>
+              Marque as duas declarações para liberar o teste.
+            } @else {
+              <span class="size-1.5 bg-lab-900" aria-hidden="true"></span>
+              Tudo pronto.
+            }
+          }
+        }
+      </p>
+    </form>
+  }
+
+  <p class="mt-10 border-l-2 border-lab-300 pl-3 text-[0.7rem] leading-relaxed text-lab-600">
+    Suas respostas são registradas sem identificação.
+    @if (ultimo(); as ultimo) {
+      <br />
+      <span class="tracking-widest text-rust-500">ÚLTIMA APLICAÇÃO:</span>
+      {{ ultimo.concluidoEm | date: 'dd/MM/yyyy' }}, {{ nomeDiagnostico(ultimo) }} ({{
+        ultimo.acertos
+      }}/{{ ultimo.totalQuestoes }}).
+    }
+  </p>
+</section>

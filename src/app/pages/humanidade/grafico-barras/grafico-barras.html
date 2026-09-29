@@ -1,0 +1,44 @@
+<ul class="grid gap-5">
+  @for (barra of barras(); track barra.id) {
+    <li>
+      @if (barra.link) {
+        <a
+          [routerLink]="barra.link"
+          class="group block outline-none focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-rust-600"
+          [attr.aria-label]="barra.rotulo + ': ' + barra.rotuloValor + ', ' + barra.detalhe + '. Abrir dilema'"
+        >
+          <ng-container *ngTemplateOutlet="conteudo; context: { $implicit: barra, clicavel: true }" />
+        </a>
+      } @else {
+        <div
+          tabindex="0"
+          class="group outline-none"
+          [attr.aria-label]="barra.rotulo + ': ' + barra.rotuloValor + ', ' + barra.detalhe"
+        >
+          <ng-container *ngTemplateOutlet="conteudo; context: { $implicit: barra, clicavel: false }" />
+        </div>
+      }
+    </li>
+  }
+</ul>
+
+<ng-template #conteudo let-barra let-clicavel="clicavel">
+  <div class="flex items-baseline justify-between gap-4 text-sm">
+    <span
+      class="text-lab-900 group-hover:text-rust-600 group-focus-visible:text-rust-600"
+      [class.underline]="clicavel"
+      [class.decoration-lab-300]="clicavel"
+      [class.underline-offset-4]="clicavel"
+      >{{ barra.rotulo }}</span
+    >
+    <span class="shrink-0 tabular-nums text-lab-900">{{ barra.rotuloValor }}</span>
+  </div>
+  <div class="mt-1.5 h-3" [class.bg-lab-100]="escala() === 'absoluta'">
+    <div
+      class="h-full transition-[filter] duration-200 group-hover:brightness-110 group-focus-visible:brightness-110"
+      [style.width.%]="largura(barra)"
+      [style.background-color]="cor(barra)"
+    ></div>
+  </div>
+  <p class="mt-1 text-[0.7rem] text-lab-600">{{ barra.detalhe }}</p>
+</ng-template>

@@ -1,0 +1,64 @@
+<article class="motion-safe:animate-surgir">
+  <h1 class="text-xl uppercase leading-snug tracking-[0.12em] text-lab-900 sm:text-2xl">
+    {{ dilema().titulo }}
+  </h1>
+  <p class="mt-4 text-sm leading-relaxed text-lab-600 sm:text-[0.9375rem]">
+    {{ dilema().descricao }}
+  </p>
+  <p class="mt-6 border-l-4 border-rust-600 pl-3 text-base text-lab-900 sm:text-lg">
+    {{ dilema().pergunta }}
+  </p>
+
+  @if (somenteLeitura()) {
+    <!-- Visualização: as alternativas aparecem, mas não podem ser escolhidas -->
+    <ul class="mt-8 grid gap-3" [attr.aria-label]="'Alternativas: ' + dilema().pergunta">
+      @for (opcao of dilema().opcoes; track opcao.id; let i = $index) {
+        <li
+          class="flex items-start gap-4 border-2 border-dashed border-lab-300 bg-white px-4 py-3.5 text-sm text-lab-900 sm:text-base"
+        >
+          <span class="shrink-0 pt-0.5 text-xs tracking-widest text-rust-500"
+            >[ {{ letras[i] }} ]</span
+          >
+          <span>{{ opcao.texto }}</span>
+        </li>
+      }
+    </ul>
+  } @else {
+    <div class="mt-8 grid gap-3" role="radiogroup" [attr.aria-label]="dilema().pergunta">
+      @for (opcao of dilema().opcoes; track opcao.id; let i = $index) {
+        @let marcada = selecionada() === opcao;
+        <button
+          type="button"
+          role="radio"
+          [attr.aria-checked]="marcada"
+          (click)="selecionada.set(opcao)"
+          class="flex items-start gap-4 border-2 px-4 py-3.5 text-left text-sm transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rust-600 sm:text-base"
+          [class]="
+            marcada
+              ? 'border-lab-900 bg-lab-900 text-lab-50'
+              : 'border-lab-900 bg-white text-lab-900 hover:border-rust-600'
+          "
+        >
+          <span
+            class="shrink-0 pt-0.5 text-xs tracking-widest"
+            [class]="marcada ? 'text-wire-yellow' : 'text-rust-500'"
+          >
+            [ {{ letras[i] }} ]
+          </span>
+          <span>{{ opcao.texto }}</span>
+        </button>
+      }
+    </div>
+
+    <div class="mt-8 flex justify-end">
+      <button
+        type="button"
+        [disabled]="!selecionada()"
+        (click)="confirmar()"
+        class="inline-flex items-center gap-2 border-2 border-lab-900 bg-lab-900 px-5 py-2.5 text-sm uppercase tracking-widest text-lab-50 transition-colors enabled:hover:border-rust-600 enabled:hover:bg-rust-600 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-rust-600 disabled:cursor-not-allowed disabled:opacity-30"
+      >
+        <span aria-hidden="true">[</span> Confirmar escolha <span aria-hidden="true">]</span>
+      </button>
+    </div>
+  }
+</article>

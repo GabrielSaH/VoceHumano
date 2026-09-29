@@ -1,0 +1,100 @@
+<!-- Hero -->
+<section class="mx-auto grid max-w-5xl items-center gap-12 px-4 py-14 sm:px-6 sm:py-20 md:grid-cols-[1fr_20rem]">
+  <div class="motion-safe:animate-surgir">
+    <p class="text-[0.65rem] uppercase tracking-[0.3em] text-rust-600">[ Teste de Turing inverso ]</p>
+    <h1 class="mt-5 font-display text-4xl leading-tight tracking-[0.12em] text-lab-900 sm:text-6xl">
+      <span class="block">VOCE</span>
+      <span class="block">HUMANO?</span>
+    </h1>
+    <p class="mt-6 max-w-lg text-sm leading-relaxed text-lab-600 sm:text-base">
+      Desde 1950 a gente pergunta se uma máquina consegue se passar por humana. Aqui a pergunta volta para você: diante
+      de uma escolha difícil, você ainda decide como gente?
+    </p>
+
+    @if (bloqueado()) {
+      @if (diagnostico(); as diagnostico) {
+        <p class="mt-8 flex items-center gap-3 text-xs uppercase tracking-widest text-lab-600">
+          <span class="size-2.5" [style.background-color]="diagnostico.cor" aria-hidden="true"></span>
+          Seu diagnóstico: <span class="text-lab-900">{{ diagnostico.nome }}</span>
+        </p>
+      }
+      <div class="mt-5 flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-6">
+        <a
+          routerLink="/humanidade"
+          class="inline-flex items-center justify-center gap-2 border-2 border-lab-900 bg-lab-900 px-6 py-3 text-sm uppercase tracking-widest text-lab-50 transition-colors hover:border-rust-600 hover:bg-rust-600 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-rust-600"
+        >
+          <span aria-hidden="true">[</span> Ver a humanidade <span aria-hidden="true">]</span>
+        </a>
+      </div>
+    } @else {
+      <div class="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-6">
+        <a
+          routerLink="/teste"
+          class="inline-flex items-center justify-center gap-2 border-2 border-lab-900 bg-lab-900 px-6 py-3 text-sm uppercase tracking-widest text-lab-50 transition-colors hover:border-rust-600 hover:bg-rust-600 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-rust-600"
+        >
+          <span aria-hidden="true">[</span> Iniciar teste <span aria-hidden="true">]</span>
+        </a>
+        <a
+          routerLink="/leis"
+          class="text-xs uppercase tracking-widest text-lab-600 underline decoration-rust-500 decoration-2 underline-offset-4 hover:text-rust-600"
+        >
+          Ler as leis primeiro
+        </a>
+      </div>
+      <p class="mt-5 text-[0.7rem] uppercase tracking-widest text-lab-600">
+        20 dilemas
+        @if (tentativaUnica) {
+          <span class="mx-2 text-rust-500" aria-hidden="true">//</span> uma tentativa por navegador
+        }
+      </p>
+    }
+  </div>
+
+  <!-- O robô, como num visor de análise -->
+  <figure class="relative mx-auto w-full max-w-72 border-2 border-lab-900 bg-white md:max-w-none" aria-hidden="true">
+    <img
+      src="images/robo.png"
+      alt=""
+      width="603"
+      height="725"
+      class="block w-full mix-blend-multiply"
+    />
+    <span class="pointer-events-none absolute left-2 top-2 size-4 border-l-2 border-t-2 border-rust-600"></span>
+    <span class="pointer-events-none absolute right-2 top-2 size-4 border-r-2 border-t-2 border-rust-600"></span>
+    <span class="pointer-events-none absolute bottom-2 left-2 size-4 border-b-2 border-l-2 border-rust-600"></span>
+    <span class="pointer-events-none absolute bottom-2 right-2 size-4 border-b-2 border-r-2 border-rust-600"></span>
+    <span class="pointer-events-none absolute inset-x-0 top-0 h-0.5 bg-rust-600/60 motion-safe:animate-varredura"></span>
+    <figcaption
+      class="absolute -bottom-3 left-4 bg-lab-50 px-2 text-[0.6rem] uppercase tracking-[0.3em] text-lab-600"
+    >
+      Observador
+    </figcaption>
+  </figure>
+</section>
+
+<!-- Como funciona -->
+<section class="border-t-2 border-lab-900 bg-white">
+  <div class="mx-auto max-w-5xl px-4 py-14 sm:px-6 sm:py-16">
+    <h2 class="text-[0.65rem] uppercase tracking-[0.3em] text-rust-600">[ Como funciona ]</h2>
+    <ol class="mt-6 grid border-2 border-lab-900 md:grid-cols-3">
+      @for (passo of passos; track passo.numero; let ultimo = $last) {
+        <li
+          class="flex flex-col p-5 sm:p-6"
+          [class]="ultimo ? '' : 'border-b-2 border-lab-900 md:border-b-0 md:border-r-2'"
+        >
+          <span class="font-display text-3xl leading-none text-rust-600" aria-hidden="true">{{ passo.numero }}</span>
+          <h3 class="mt-4 text-sm uppercase tracking-[0.2em] text-lab-900">{{ passo.titulo }}</h3>
+          <p class="mt-2 flex-1 text-[0.8125rem] leading-relaxed text-lab-600">{{ passo.texto }}</p>
+          @if (passo.link; as link) {
+            <a
+              [routerLink]="link.caminho"
+              class="mt-4 self-start text-[0.7rem] uppercase tracking-widest text-lab-900 underline decoration-rust-500 decoration-2 underline-offset-4 hover:text-rust-600"
+            >
+              {{ link.rotulo }}
+            </a>
+          }
+        </li>
+      }
+    </ol>
+  </div>
+</section>

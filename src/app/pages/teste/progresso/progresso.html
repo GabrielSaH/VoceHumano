@@ -1,0 +1,23 @@
+<div
+  class="relative flex items-center justify-between"
+  role="progressbar"
+  aria-label="Progresso do teste"
+  aria-valuemin="1"
+  [attr.aria-valuemax]="total()"
+  [attr.aria-valuenow]="atual() + 1"
+>
+  <span class="absolute inset-x-2 top-1/2 h-0.5 -translate-y-1/2 bg-lab-900" aria-hidden="true"></span>
+
+  @for (passo of passos(); track passo) {
+    <span
+      class="relative flex size-4 items-center justify-center sm:size-7"
+      [class]="passo === atual() ? 'outline-2 outline-dashed outline-wire-yellow' : ''"
+      aria-hidden="true"
+    >
+      <span
+        class="size-2 rotate-45 border-2 border-rust-600 transition-colors duration-300 sm:size-3.5"
+        [class]="passo < atual() ? 'bg-rust-600' : 'bg-lab-50'"
+      ></span>
+    </span>
+  }
+</div>

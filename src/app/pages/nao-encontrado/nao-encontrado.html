@@ -1,0 +1,73 @@
+<section
+  class="mx-auto grid max-w-5xl items-center gap-12 px-4 py-14 sm:px-6 sm:py-20 md:grid-cols-[1fr_16rem]"
+>
+  <div class="motion-safe:animate-surgir">
+    <p class="text-[0.65rem] uppercase tracking-[0.3em] text-rust-600">
+      [ Erro 404 // Registro inexistente ]
+    </p>
+    <h1 class="mt-5 font-display leading-none tracking-[0.12em] text-lab-900">
+      <span class="block text-7xl sm:text-8xl">404</span>
+      <span class="mt-4 block text-xl sm:text-2xl">SINAL PERDIDO</span>
+    </h1>
+    <p class="mt-6 max-w-md text-sm leading-relaxed text-lab-600">
+      Esta página não existe. Confira o endereço ou volte para o início.
+    </p>
+
+    <p
+      class="mt-5 max-w-md break-all border-2 border-dashed border-lab-300 bg-white px-3 py-2 text-xs text-lab-900"
+    >
+      <span class="tracking-widest text-rust-500">ENDEREÇO:</span> {{ endereco }}
+    </p>
+
+    <div class="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-6">
+      <a
+        routerLink="/"
+        class="inline-flex items-center justify-center gap-2 border-2 border-lab-900 bg-lab-900 px-6 py-3 text-sm uppercase tracking-widest text-lab-50 transition-colors hover:border-rust-600 hover:bg-rust-600 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-rust-600"
+      >
+        <span aria-hidden="true">[</span> Voltar ao início <span aria-hidden="true">]</span>
+      </a>
+      <a
+        routerLink="/teste"
+        class="text-xs uppercase tracking-widest text-lab-600 underline decoration-rust-500 decoration-2 underline-offset-4 hover:text-rust-600"
+      >
+        Ir para o teste
+      </a>
+    </div>
+  </div>
+
+  <!-- O observador da página inicial, agora sem sinal -->
+  <figure
+    class="relative mx-auto w-full max-w-56 border-2 border-lab-900 bg-white md:max-w-none"
+    aria-hidden="true"
+  >
+    <img
+      src="images/robo.png"
+      alt=""
+      width="603"
+      height="725"
+      class="block w-full opacity-40 grayscale mix-blend-multiply"
+    />
+    <span
+      class="pointer-events-none absolute left-2 top-2 size-4 border-l-2 border-t-2 border-rust-600"
+    ></span>
+    <span
+      class="pointer-events-none absolute right-2 top-2 size-4 border-r-2 border-t-2 border-rust-600"
+    ></span>
+    <span
+      class="pointer-events-none absolute bottom-2 left-2 size-4 border-b-2 border-l-2 border-rust-600"
+    ></span>
+    <span
+      class="pointer-events-none absolute bottom-2 right-2 size-4 border-b-2 border-r-2 border-rust-600"
+    ></span>
+    <span
+      class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-3 border-2 border-rust-600 bg-lab-50 px-2 py-0.5 text-[0.65rem] tracking-[0.25em] whitespace-nowrap text-rust-600"
+    >
+      [ SEM SINAL ]
+    </span>
+    <figcaption
+      class="absolute -bottom-3 left-4 bg-lab-50 px-2 text-[0.6rem] uppercase tracking-[0.3em] text-lab-600"
+    >
+      Observador
+    </figcaption>
+  </figure>
+</section>

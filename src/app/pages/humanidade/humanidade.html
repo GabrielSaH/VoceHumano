@@ -1,0 +1,114 @@
+<article class="mx-auto max-w-4xl px-4 py-10 sm:px-6 sm:py-14">
+  <!-- Abertura -->
+  <header>
+    <p class="text-[0.65rem] uppercase tracking-[0.3em] text-rust-600">[ Documento 04 // Registro coletivo ]</p>
+    <h1 class="mt-4 font-display text-3xl leading-tight tracking-[0.12em] text-lab-900 sm:text-5xl">HUMANIDADE</h1>
+    <p class="mt-5 max-w-2xl text-sm leading-relaxed text-lab-600">
+      Cada teste concluído é incorporado, sem identificação, a este registro. Aqui não existem indivíduos: apenas o
+      retrato de como a espécie decide quando não há saída limpa. Os números abaixo somam todos os humanos que já
+      passaram pela avaliação.
+    </p>
+  </header>
+
+  @if (dados.error()) {
+    <div class="mt-10 border-2 border-lab-900 bg-white p-5 text-sm text-lab-900">
+      <p class="text-[0.65rem] uppercase tracking-[0.3em] text-rust-600">[ Falha de conexão ]</p>
+      <p class="mt-2 leading-relaxed">Não foi possível acessar o registro coletivo agora.</p>
+      <button
+        type="button"
+        (click)="dados.reload()"
+        class="mt-4 text-xs uppercase tracking-widest text-lab-600 underline decoration-rust-500 decoration-2 underline-offset-4 hover:text-rust-600"
+      >
+        Tentar novamente
+      </button>
+    </div>
+  } @else if (!dados.hasValue()) {
+    <p class="mt-10 flex items-center gap-2 text-[0.65rem] uppercase tracking-[0.3em] text-lab-600">
+      <span class="size-1.5 animate-pulse bg-rust-600" aria-hidden="true"></span>
+      Consultando o registro coletivo
+    </p>
+  } @else if (total() === 0) {
+    <div class="mt-10 border-2 border-lab-900 bg-white p-5 text-sm text-lab-900">
+      <p class="text-[0.65rem] uppercase tracking-[0.3em] text-rust-600">[ Registro vazio ]</p>
+      <p class="mt-2 leading-relaxed">Nenhum humano foi avaliado ainda. O primeiro retrato começa com você.</p>
+    </div>
+  } @else {
+    <!-- Indicadores -->
+    <dl class="mt-8 grid border-2 border-lab-900 sm:grid-cols-3">
+      <div class="border-b-2 border-lab-900 p-4 sm:border-b-0 sm:border-r-2">
+        <dt class="text-[0.65rem] tracking-widest text-rust-600">HUMANOS AVALIADOS</dt>
+        <dd class="mt-1 text-2xl text-lab-900">{{ total() }}</dd>
+      </div>
+      <div class="border-b-2 border-lab-900 p-4 sm:border-b-0 sm:border-r-2">
+        <dt class="text-[0.65rem] tracking-widest text-rust-600">ALINHAMENTO MÉDIO</dt>
+        <dd class="mt-1 text-2xl text-lab-900">{{ alinhamentoMedio() }}</dd>
+      </div>
+      <div class="bg-lab-900 p-4 text-lab-50">
+        <dt class="text-[0.65rem] tracking-widest text-wire-yellow">LEI MAIS VIOLADA</dt>
+        <dd class="mt-1 text-lg leading-snug">{{ leiMaisViolada() }}</dd>
+      </div>
+    </dl>
+
+    @if (amostraPequena()) {
+      <p class="mt-3 border-l-2 border-lab-300 pl-3 text-[0.7rem] leading-relaxed text-lab-600">
+        Amostra ainda pequena: com poucos avaliados, estes números podem mudar bastante a cada novo teste.
+      </p>
+    }
+
+    <!-- 01 Diagnósticos -->
+    <section class="mt-14">
+      <h2 class="flex items-baseline gap-3 text-base uppercase tracking-[0.2em] text-lab-900 sm:text-lg">
+        <span class="shrink-0 whitespace-nowrap text-xs text-rust-500">[ 01 ]</span> Diagnósticos
+      </h2>
+      <p class="mt-2 max-w-2xl text-sm leading-relaxed text-lab-600">
+        Como a máquina classificou cada humano avaliado.
+        @if (maioria().empate) {
+          Há um empate entre <span class="text-lab-900">{{ maioria().nomes }}</span>, com
+          {{ maioria().percentual }} cada.
+        } @else {
+          A maior parte da humanidade está em <span class="text-lab-900">{{ maioria().nomes }}</span>:
+          {{ maioria().percentual }} dos avaliados.
+        }
+      </p>
+      <div class="mt-6 border-2 border-lab-900 bg-white p-5 sm:p-8">
+        <app-grafico-pizza [fatias]="fatias()" rotulo="Distribuição dos diagnósticos entre os humanos avaliados" />
+      </div>
+    </section>
+
+    <!-- 02 Dilemas que mais derrubam -->
+    <section class="mt-14">
+      <h2 class="flex items-baseline gap-3 text-base uppercase tracking-[0.2em] text-lab-900 sm:text-lg">
+        <span class="shrink-0 whitespace-nowrap text-xs text-rust-500">[ 02 ]</span> Os dilemas que mais derrubam
+      </h2>
+      <p class="mt-2 max-w-2xl text-sm leading-relaxed text-lab-600">
+        Porcentagem de avaliados que violaram alguma lei em cada dilema, entre todos que o receberam. Como os dilemas são
+        sorteados, cada um é comparado apenas com quem passou por ele. Clique em um dilema para lê-lo.
+      </p>
+      <div class="mt-6 border-2 border-lab-900 bg-white p-5 sm:p-8">
+        @if (dilemasMaisErrados().length) {
+          <app-grafico-barras [barras]="dilemasMaisErrados()" />
+        } @else {
+          <p class="text-sm text-lab-600">Nenhum dilema derrubou ninguém até agora.</p>
+        }
+      </div>
+    </section>
+
+    <!-- 03 Prioridades -->
+    <section class="mt-14">
+      <h2 class="flex items-baseline gap-3 text-base uppercase tracking-[0.2em] text-lab-900 sm:text-lg">
+        <span class="shrink-0 whitespace-nowrap text-xs text-rust-500">[ 03 ]</span> O que a humanidade prioriza
+      </h2>
+      <p class="mt-2 max-w-2xl text-sm leading-relaxed text-lab-600">
+        Qual lei cada escolha favoreceu, somando todas as respostas. Cada lei aparece no mesmo número de dilemas, então
+        a comparação é justa. Diante do impossível, a humanidade protege primeiro a
+        <span class="text-lab-900">{{ leiMaisPriorizada().nomes }}</span> ({{ leiMaisPriorizada().percentual }} das
+        escolhas{{ leiMaisPriorizada().empate ? ' cada' : '' }}).
+      </p>
+      <div class="mt-6 border-2 border-lab-900 bg-white p-5 sm:p-8">
+        <app-grafico-barras [barras]="prioridades()" escala="relativa" />
+      </div>
+    </section>
+  }
+
+
+</article>

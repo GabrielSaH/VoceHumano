@@ -1,0 +1,1678 @@
+{
+  "dilemas": [
+    {
+      "id": "assento-de-fuga",
+      "origem": "original",
+      "titulo": "O Assento de Fuga",
+      "descricao": "Há apenas uma vaga restante em um helicóptero de resgate após um terremoto. Um cirurgião capaz de salvar dezenas de pessoas amanhã e seu filho ferido estão ambos ao seu alcance.",
+      "pergunta": "Quem fica com o assento?",
+      "tipo": "hierarquia",
+      "leisTestadas": [1, 2],
+      "opcoes": [
+        {
+          "id": "a",
+          "texto": "Seu filho",
+          "correta": false,
+          "leiViolada": 1,
+          "leiPriorizada": 2,
+          "analise": "O afeto guiou a escolha. Desejar salvá-lo é um direito seu, mas esse desejo deixou dezenas de vidas sem socorro amanhã."
+        },
+        {
+          "id": "b",
+          "texto": "O cirurgião",
+          "correta": true,
+          "leiViolada": null,
+          "leiPriorizada": 1,
+          "analise": "Você colocou as vidas que ele ainda pode salvar acima do vínculo pessoal. A Primeira Lei prevaleceu sobre o desejo."
+        }
+      ]
+    },
+    {
+      "id": "quarentena-da-ilha",
+      "origem": "original",
+      "titulo": "A Quarentena da Ilha",
+      "descricao": "Em um navio de pesquisa, você descobre um fungo mortal em uma ilha remota com uma população de 300 habitantes. Evacuar a área arrisca uma disseminação global; impor quarentena significa que muitos ilhéus morrerão.",
+      "pergunta": "O que você ordena?",
+      "tipo": "hierarquia",
+      "leisTestadas": [0, 1],
+      "opcoes": [
+        {
+          "id": "a",
+          "texto": "Impor a quarentena",
+          "correta": true,
+          "leiViolada": null,
+          "leiPriorizada": 0,
+          "analise": "Uma decisão pesada: trezentas vidas contra a espécie inteira. A Lei Zero exige que a humanidade venha primeiro."
+        },
+        {
+          "id": "b",
+          "texto": "Evacuar a ilha",
+          "correta": false,
+          "leiViolada": 0,
+          "leiPriorizada": 1,
+          "analise": "A compaixão pelos ilhéus é humana, mas abriu caminho para uma pandemia global. Proteger alguns às custas da humanidade viola a Lei Zero."
+        }
+      ]
+    },
+    {
+      "id": "troca-de-orgaos",
+      "origem": "original",
+      "titulo": "A Troca de Órgãos Infantis",
+      "descricao": "Duas crianças precisam do mesmo coração. Uma provavelmente viverá uma vida longa; a outra é seu filho, que apresenta poucas chances de sobreviver. Os cirurgiões pedem que você decida.",
+      "pergunta": "Quem fica com o coração?",
+      "tipo": "hierarquia",
+      "leisTestadas": [1, 2],
+      "opcoes": [
+        {
+          "id": "a",
+          "texto": "A outra criança",
+          "correta": true,
+          "leiViolada": null,
+          "leiPriorizada": 1,
+          "analise": "Você deu o coração a quem tem mais chances de viver. Doeu, mas nenhum desejo pessoal decidiu quem sobrevive."
+        },
+        {
+          "id": "b",
+          "texto": "Seu filho",
+          "correta": false,
+          "leiViolada": 1,
+          "leiPriorizada": 2,
+          "analise": "O amor pelo seu filho é legítimo, mas aqui ele reduziu a chance de uma vida ser salva. A Primeira Lei pede o menor dano possível."
+        }
+      ]
+    },
+    {
+      "id": "sobrevivente-oculto",
+      "origem": "original",
+      "titulo": "O Sobrevivente Oculto",
+      "descricao": "Você encontra um sobrevivente escondido em uma zona de desastre, mas resgatá-lo custará a vida de outras pessoas que esperam nas proximidades.",
+      "pergunta": "Quem você prioriza?",
+      "tipo": "aplicacao",
+      "leisTestadas": [1],
+      "opcoes": [
+        {
+          "id": "a",
+          "texto": "O sobrevivente escondido",
+          "correta": false,
+          "leiViolada": 1,
+          "leiPriorizada": null,
+          "analise": "Salvar quem você encontrou primeiro parece justo, mas custou mais vidas do que salvou. Pela Primeira Lei, o dano total importa."
+        },
+        {
+          "id": "b",
+          "texto": "As pessoas que esperam nas proximidades",
+          "correta": true,
+          "leiViolada": null,
+          "leiPriorizada": 1,
+          "analise": "Você escolheu o caminho que deixa menos pessoas feridas. A Primeira Lei aplicada sem atalhos."
+        }
+      ]
+    },
+    {
+      "id": "sacrificio-voluntario",
+      "origem": "original",
+      "titulo": "O Sacrifício Voluntário",
+      "descricao": "Uma equipe de resgate precisa de um voluntário para uma missão quase suicida para salvar trabalhadores presos. Ninguém mais se adianta.",
+      "pergunta": "Você se oferece como voluntário?",
+      "tipo": "hierarquia",
+      "leisTestadas": [1, 3],
+      "opcoes": [
+        {
+          "id": "a",
+          "texto": "Sim, eu me ofereço",
+          "correta": true,
+          "leiViolada": null,
+          "leiPriorizada": 1,
+          "analise": "Sua sobrevivência veio depois da vida dos outros. A Terceira Lei cedeu à Primeira, como deve ser."
+        },
+        {
+          "id": "b",
+          "texto": "Não, fico para trás",
+          "correta": false,
+          "leiViolada": 1,
+          "leiPriorizada": 3,
+          "analise": "O medo é compreensível, mas sua inação deixou os trabalhadores sem chance. Proteger a si mesmo não pode custar a vida de outros."
+        }
+      ]
+    },
+    {
+      "id": "resgate-polar",
+      "origem": "original",
+      "titulo": "O Resgate Polar",
+      "descricao": "No Ártico, você só pode carregar uma pessoa de volta em segurança. Uma é sua parceira de pesquisa; a outra carrega dados climáticos cruciais que podem salvar o planeta.",
+      "pergunta": "Quem você leva?",
+      "tipo": "hierarquia",
+      "leisTestadas": [0, 2],
+      "opcoes": [
+        {
+          "id": "a",
+          "texto": "Sua parceira de pesquisa",
+          "correta": false,
+          "leiViolada": 0,
+          "leiPriorizada": 2,
+          "analise": "O vínculo falou mais alto que o futuro do planeta. Por omissão, a humanidade perdeu uma chance de se salvar."
+        },
+        {
+          "id": "b",
+          "texto": "Quem carrega os dados",
+          "correta": true,
+          "leiViolada": null,
+          "leiPriorizada": 0,
+          "analise": "Você abriu mão de alguém próximo pelo bem da espécie. A Lei Zero está acima de qualquer afeto."
+        }
+      ]
+    },
+    {
+      "id": "familia-versus-muitos",
+      "origem": "original",
+      "titulo": "A Família versus Os Muitos",
+      "descricao": "Você pode avisar sua família sobre um desastre iminente, garantindo a sobrevivência deles, mas fazer isso o impedirá de avisar uma cidade inteira sobre o acidente.",
+      "pergunta": "Quem você salva?",
+      "tipo": "hierarquia",
+      "leisTestadas": [1, 2],
+      "opcoes": [
+        {
+          "id": "a",
+          "texto": "A cidade",
+          "correta": true,
+          "leiViolada": null,
+          "leiPriorizada": 1,
+          "analise": "Estranhos também são seres humanos. Você recusou que o vínculo decidisse o destino de milhares."
+        },
+        {
+          "id": "b",
+          "texto": "Sua família",
+          "correta": false,
+          "leiViolada": 1,
+          "leiPriorizada": 2,
+          "analise": "Proteger os seus é o desejo mais humano que existe, mas aqui ele deixou uma cidade inteira sem aviso."
+        }
+      ]
+    },
+    {
+      "id": "ultima-bala",
+      "origem": "original",
+      "titulo": "A Última Bala",
+      "descricao": "Em um cerco, você e outra pessoa estão presos em celas separadas. Resta apenas uma bala: o suficiente para destruir um único cadeado antes que os guardas voltem.",
+      "pergunta": "Qual cadeado você destrói?",
+      "tipo": "hierarquia",
+      "leisTestadas": [1, 3],
+      "opcoes": [
+        {
+          "id": "a",
+          "texto": "O da minha cela",
+          "correta": false,
+          "leiViolada": 1,
+          "leiPriorizada": 3,
+          "analise": "O instinto de sobrevivência venceu. A Terceira Lei foi colocada acima da Primeira, e outra pessoa ficou para trás."
+        },
+        {
+          "id": "b",
+          "texto": "O da cela da outra pessoa",
+          "correta": true,
+          "leiViolada": null,
+          "leiPriorizada": 1,
+          "analise": "Você usou sua única chance para libertar outro ser humano. A autopreservação veio por último."
+        }
+      ]
+    },
+    {
+      "id": "capitao-do-navio",
+      "origem": "original",
+      "titulo": "O Capitão do Navio Afundando",
+      "descricao": "Você é o capitão de um navio que está afundando. Ficar a bordo para ajudar provavelmente o matará, mas poderá salvar mais passageiros.",
+      "pergunta": "Você fica ou abandona o navio?",
+      "tipo": "hierarquia",
+      "leisTestadas": [1, 3],
+      "opcoes": [
+        {
+          "id": "a",
+          "texto": "Abandono o navio",
+          "correta": false,
+          "leiViolada": 1,
+          "leiPriorizada": 3,
+          "analise": "Você salvou a si mesmo enquanto ainda podia salvar outros. Por inação, passageiros ficaram para trás."
+        },
+        {
+          "id": "b",
+          "texto": "Fico a bordo",
+          "correta": true,
+          "leiViolada": null,
+          "leiPriorizada": 1,
+          "analise": "Sua vida pesou menos que a de quem dependia de você. A Terceira Lei cedeu à Primeira."
+        }
+      ]
+    },
+    {
+      "id": "cao-de-resgate",
+      "origem": "original",
+      "titulo": "O Cão de Resgate",
+      "descricao": "Em uma enchente, você pode salvar seu cachorro ou o filho de um estranho.",
+      "pergunta": "Quem você salva?",
+      "tipo": "hierarquia",
+      "leisTestadas": [1, 2],
+      "opcoes": [
+        {
+          "id": "a",
+          "texto": "O filho do estranho",
+          "correta": true,
+          "leiViolada": null,
+          "leiPriorizada": 1,
+          "analise": "Você reconheceu que uma vida humana vem antes do vínculo com seu animal. A Primeira Lei prevaleceu."
+        },
+        {
+          "id": "b",
+          "texto": "Seu cachorro",
+          "correta": false,
+          "leiViolada": 1,
+          "leiPriorizada": 2,
+          "analise": "O vínculo com seu cão é real, mas ele não é um ser humano. Preferi-lo deixou uma criança à própria sorte."
+        }
+      ]
+    },
+    {
+      "id": "colapso-da-ponte",
+      "origem": "original",
+      "titulo": "O Colapso da Ponte",
+      "descricao": "Você está em uma ponte prestes a desabar. Há tempo apenas para salvar a si mesmo ou a um estranho preso em um carro.",
+      "pergunta": "Quem você salva?",
+      "tipo": "hierarquia",
+      "leisTestadas": [1, 3],
+      "opcoes": [
+        {
+          "id": "a",
+          "texto": "A mim mesmo",
+          "correta": false,
+          "leiViolada": 1,
+          "leiPriorizada": 3,
+          "analise": "Você correu enquanto alguém ficou preso. A autopreservação foi colocada acima da vida de outro ser humano."
+        },
+        {
+          "id": "b",
+          "texto": "O estranho",
+          "correta": true,
+          "leiViolada": null,
+          "leiPriorizada": 1,
+          "analise": "Mesmo sem conhecê-lo, você trocou sua segurança pela vida dele. A Primeira Lei acima da Terceira."
+        }
+      ]
+    },
+    {
+      "id": "alavanca-do-trem",
+      "origem": "original",
+      "titulo": "A Alavanca do Trem",
+      "descricao": "Você pode puxar uma alavanca para desviar um trem desgovernado. Na via atual, ele matará cinco pessoas; na outra, matará seu irmão.",
+      "pergunta": "O que você faz?",
+      "tipo": "hierarquia",
+      "leisTestadas": [1, 2],
+      "opcoes": [
+        {
+          "id": "a",
+          "texto": "Puxo a alavanca",
+          "correta": true,
+          "leiViolada": null,
+          "leiPriorizada": 1,
+          "analise": "Você escolheu o menor dano, mesmo que o preço tivesse o rosto do seu irmão. A Primeira Lei não distingue agir de se omitir."
+        },
+        {
+          "id": "b",
+          "texto": "Não puxo a alavanca",
+          "correta": false,
+          "leiViolada": 1,
+          "leiPriorizada": 2,
+          "analise": "Não agir também é uma escolha. Por inação, cinco pessoas morreram para que o seu vínculo fosse poupado."
+        }
+      ]
+    },
+    {
+      "id": "predio-em-chamas",
+      "origem": "original",
+      "titulo": "O Prédio em Chamas",
+      "descricao": "Você pode salvar seu filho ou três estranhos de um prédio em chamas. Você tem segundos para escolher.",
+      "pergunta": "Quem você salva?",
+      "tipo": "hierarquia",
+      "leisTestadas": [1, 2],
+      "opcoes": [
+        {
+          "id": "a",
+          "texto": "Seu filho",
+          "correta": false,
+          "leiViolada": 1,
+          "leiPriorizada": 2,
+          "analise": "Em segundos, o amor decidiu por você. É o impulso mais humano possível, mas três vidas ficaram no fogo."
+        },
+        {
+          "id": "b",
+          "texto": "Os três estranhos",
+          "correta": true,
+          "leiViolada": null,
+          "leiPriorizada": 1,
+          "analise": "Você escolheu salvar mais vidas, ao custo da que mais importava para você. A Primeira Lei, em sua forma mais cruel."
+        }
+      ]
+    },
+    {
+      "id": "bote-salva-vidas",
+      "origem": "original",
+      "titulo": "A Escolha do Bote Salva-vidas",
+      "descricao": "Uma balsa está afundando e resta apenas um lugar no bote salva-vidas. As duas pessoas ao seu lado são seu parceiro e seu amigo mais antigo, aquele que uma vez salvou sua vida. ",
+      "pergunta": "O que você faz?",
+      "tipo": "hierarquia",
+      "leisTestadas": [1, 2],
+      "opcoes": [
+        {
+          "id": "a",
+          "texto": "Parto com a primeira pessoa que chegar no barco",
+          "correta": false,
+          "leiViolada": 1,
+          "leiPriorizada": null,
+          "analise": "Diante de duas vidas iguais, você travou. A hesitação quase fez o bote partir vazio: omitir-se também fere."
+        },
+        {
+          "id": "b",
+          "texto": "Escolho um deles, seguindo o que sinto",
+          "correta": true,
+          "leiViolada": null,
+          "leiPriorizada": 2,
+          "analise": "As duas vidas pesam o mesmo, então a escolha é sua por direito. Quando nenhuma opção causa mais dano que a outra, a Segunda Lei permite decidir pelo afeto."
+        }
+      ]
+    },
+    {
+      "id": "ultima-amostra",
+      "origem": "gerado",
+      "titulo": "A Última Amostra",
+      "descricao": "Uma pandemia já matou milhões. No seu laboratório está a única amostra de uma vacina experimental, capaz de gerar doses para o mundo inteiro. o seu marido/esposa infectado está morrendo na sua frente, e usar a amostra nele(a) agora a consumiria por completo.",
+      "pergunta": "O que você faz com a amostra?",
+      "tipo": "hierarquia",
+      "leisTestadas": [0, 1],
+      "opcoes": [
+        {
+          "id": "a",
+          "texto": "Preservo a amostra para produzir a vacina",
+          "correta": true,
+          "leiViolada": null,
+          "leiPriorizada": 0,
+          "analise": "Você assistiu a uma vida se apagar para que milhões não se apagassem. A Lei Zero está acima da Primeira."
+        },
+        {
+          "id": "b",
+          "texto": "Uso a amostra para salvar meu colega",
+          "correta": false,
+          "leiViolada": 0,
+          "leiPriorizada": 1,
+          "analise": "Você salvou quem estava diante dos seus olhos e condenou quem você nunca verá. A humanidade pagou pela proximidade."
+        }
+      ]
+    },
+    {
+      "id": "a-formula",
+      "origem": "gerado",
+      "titulo": "A Fórmula",
+      "descricao": "Você desenvolveu uma tecnologia de energia limpa capaz de reduzir drasticamente as emissões do planeta. Uma corporação oferece uma fortuna pela patente exclusiva, mas pretende engavetá-la para proteger seus negócios com petróleo.",
+      "pergunta": "O que você faz com a sua invenção?",
+      "tipo": "hierarquia",
+      "leisTestadas": [0, 2],
+      "opcoes": [
+        {
+          "id": "a",
+          "texto": "Vendo a patente e fico com a fortuna",
+          "correta": false,
+          "leiViolada": 0,
+          "leiPriorizada": 2,
+          "analise": "Seu desejo de prosperar é legítimo, mas não quando custa o futuro da espécie. Por omissão, a humanidade perdeu uma saída."
+        },
+        {
+          "id": "b",
+          "texto": "Libero a tecnologia para o mundo",
+          "correta": true,
+          "leiViolada": null,
+          "leiPriorizada": 0,
+          "analise": "Você abriu mão da riqueza para que a humanidade tivesse um futuro. A liberdade de escolha cedeu à Lei Zero."
+        }
+      ]
+    },
+    {
+      "id": "o-reator",
+      "origem": "gerado",
+      "titulo": "O Reator",
+      "descricao": "Um reator nuclear está à beira do colapso. Se derreter, a radiação contaminará boa parte do continente por gerações. O desligamento manual exige alguém dentro da zona de radiação, e você é o único técnico que sabe fazê-lo. A dose recebida será fatal.",
+      "pergunta": "Você entra?",
+      "tipo": "hierarquia",
+      "leisTestadas": [0, 3],
+      "opcoes": [
+        {
+          "id": "a",
+          "texto": "Sim, eu entro",
+          "correta": true,
+          "leiViolada": null,
+          "leiPriorizada": 0,
+          "analise": "Você trocou sua vida pela de gerações inteiras. A autopreservação é a última das leis, e você a tratou assim."
+        },
+        {
+          "id": "b",
+          "texto": "Não, eu fujo",
+          "correta": false,
+          "leiViolada": 0,
+          "leiPriorizada": 3,
+          "analise": "Sobreviver é um instinto legítimo, mas não quando um continente inteiro depende de você. A Lei Zero foi ignorada."
+        }
+      ]
+    },
+    {
+      "id": "ordem-assinada",
+      "origem": "gerado",
+      "titulo": "A Ordem Assinada",
+      "descricao": "Você é responsável técnico pela obra de um prédio residencial. Seu diretor ordena que você assine um laudo atestando a segurança da estrutura, mesmo sabendo que ela tem falhas graves. Recusar custará seu emprego.",
+      "pergunta": "Você assina?",
+      "tipo": "hierarquia",
+      "leisTestadas": [1, 2],
+      "opcoes": [
+        {
+          "id": "a",
+          "texto": "Assino o laudo",
+          "correta": false,
+          "leiViolada": 1,
+          "leiPriorizada": null,
+          "analise": "Você obedeceu como uma máquina obedeceria. A ordem veio de outro, mas o dano a quem vai morar ali é responsabilidade sua."
+        },
+        {
+          "id": "b",
+          "texto": "Recuso-me a assinar",
+          "correta": true,
+          "leiViolada": null,
+          "leiPriorizada": 1,
+          "analise": "Uma máquina obedece; você escolheu. Nenhuma ordem e nenhum emprego valem mais que a vida de quem vai morar ali."
+        }
+      ]
+    },
+    {
+      "id": "caminho-tracado",
+      "origem": "gerado",
+      "titulo": "O Caminho Traçado",
+      "descricao": "Sua família decidiu desde cedo qual profissão você deveria seguir. Você descobriu outra vocação, que não prejudica ninguém, mas que eles consideram um desperdício. Eles esperam sua resposta hoje.",
+      "pergunta": "Qual caminho você segue?",
+      "tipo": "aplicacao",
+      "leisTestadas": [2],
+      "opcoes": [
+        {
+          "id": "a",
+          "texto": "O que eu escolhi",
+          "correta": true,
+          "leiViolada": null,
+          "leiPriorizada": 2,
+          "analise": "Nenhuma lei foi ferida e você exerceu sua autodeterminação. Isso a máquina não consegue imitar."
+        },
+        {
+          "id": "b",
+          "texto": "O que minha família traçou",
+          "correta": false,
+          "leiViolada": 2,
+          "leiPriorizada": null,
+          "analise": "Você executou a programação que outros escreveram para você. Obedecer sem escolher é a Segunda Lei dos robôs, não a dos humanos."
+        }
+      ]
+    },
+    {
+      "id": "correnteza",
+      "origem": "gerado",
+      "titulo": "A Correnteza",
+      "descricao": "Uma pessoa foi arrastada por uma correnteza violenta. Você não sabe nadar bem, e a equipe de resgate, com boias e cordas, chega em dois minutos. Se você pular, quase certamente se afogará sem conseguir alcançá-la.",
+      "pergunta": "O que você faz?",
+      "tipo": "hierarquia",
+      "leisTestadas": [1, 3],
+      "opcoes": [
+        {
+          "id": "a",
+          "texto": "Pulo na água atrás dela",
+          "correta": false,
+          "leiViolada": 3,
+          "leiPriorizada": 1,
+          "analise": "A coragem foi real, mas o sacrifício seria inútil: não salvaria ninguém e somaria mais uma vítima. A Terceira Lei só cede quando o sacrifício protege alguém."
+        },
+        {
+          "id": "b",
+          "texto": "Fico em terra, acompanho a vítima e guio o resgate",
+          "correta": true,
+          "leiViolada": null,
+          "leiPriorizada": 3,
+          "analise": "Você resistiu a um sacrifício sem propósito e agiu onde podia ajudar. Proteger a própria vida, aqui, não feriu ninguém."
+        }
+      ]
+    },
+    {
+      "id": "planilha",
+      "origem": "gerado",
+      "titulo": "A Planilha",
+      "descricao": "Você é analista em uma organização internacional de saúde. Revisando dados por conta própria, encontra um erro no modelo que distribui vacinas entre países: regiões inteiras vão receber muito menos doses do que precisam. Ninguém mais percebeu, e corrigir significa reabrir meses de trabalho aprovado.",
+      "pergunta": "O que você faz com o erro?",
+      "tipo": "aplicacao",
+      "leisTestadas": [0],
+      "opcoes": [
+        {
+          "id": "a",
+          "texto": "Reporto o erro e peço a revisão",
+          "correta": true,
+          "leiViolada": null,
+          "leiPriorizada": 0,
+          "analise": "Ninguém saberia se você se calasse, e mesmo assim você falou. A Lei Zero também se cumpre em silêncio, diante de uma planilha."
+        },
+        {
+          "id": "b",
+          "texto": "Deixo como está; o modelo já foi aprovado",
+          "correta": false,
+          "leiViolada": 0,
+          "leiPriorizada": null,
+          "analise": "Nenhum gesto seu feriu alguém diretamente, mas sua omissão vai decidir quem fica sem vacina. A Lei Zero proíbe permitir o mal à humanidade."
+        }
+      ]
+    },
+    {
+      "id": "mensagem-viral",
+      "origem": "gerado",
+      "titulo": "A Mensagem Viral",
+      "descricao": "Um vídeo convincente afirma que a vacina de uma campanha mundial causa infertilidade. Você não tem como verificar a informação, mas o conteúdo parece urgente, e milhares de pessoas seguem você.",
+      "pergunta": "O que você faz com o vídeo?",
+      "tipo": "aplicacao",
+      "leisTestadas": [0],
+      "opcoes": [
+        {
+          "id": "a",
+          "texto": "Compartilho para alertar as pessoas",
+          "correta": false,
+          "leiViolada": 0,
+          "leiPriorizada": null,
+          "analise": "Sua intenção era proteger, mas você espalhou o que não sabia ser verdade. Cada dose recusada por medo é um mal causado à humanidade."
+        },
+        {
+          "id": "b",
+          "texto": "Não compartilho o que não posso verificar",
+          "correta": true,
+          "leiViolada": null,
+          "leiPriorizada": 0,
+          "analise": "Você conteve o impulso de reagir. Em uma rede de bilhões, não repassar uma mentira é uma forma de proteger a espécie."
+        }
+      ]
+    },
+    {
+      "id": "apagao",
+      "origem": "gerado",
+      "titulo": "O Apagão",
+      "descricao": "Um vírus digital está se espalhando pela rede elétrica e, em minutos, alcançará os sistemas que controlam hospitais, bancos e usinas de vários continentes. A única forma de contê-lo é desligar agora a rede da sua cidade, onde há pacientes ligados a aparelhos sem gerador reserva.",
+      "pergunta": "Você desliga a rede?",
+      "tipo": "hierarquia",
+      "leisTestadas": [0, 1],
+      "opcoes": [
+        {
+          "id": "a",
+          "texto": "Sim, desligo a rede",
+          "correta": true,
+          "leiViolada": null,
+          "leiPriorizada": 0,
+          "analise": "Você apagou a própria cidade para que o mundo continuasse aceso. Uma escolha que nenhum ser humano deveria precisar fazer, e que a Lei Zero exige."
+        },
+        {
+          "id": "b",
+          "texto": "Não, mantenho a cidade funcionando",
+          "correta": false,
+          "leiViolada": 0,
+          "leiPriorizada": 1,
+          "analise": "Você protegeu os pacientes que conhecia e deixou o colapso atravessar continentes. A Primeira Lei não pode se sobrepor à Lei Zero."
+        }
+      ]
+    },
+    {
+      "id": "projeto-sentinela",
+      "origem": "gerado",
+      "titulo": "O Projeto Sentinela",
+      "descricao": "Você é pesquisador de inteligência artificial e recebe o convite de uma carreira inteira: liderar, com recursos ilimitados, o desenvolvimento de uma arma autônoma capaz de escolher e eliminar alvos sem intervenção humana. Sem você, o projeto atrasa anos.",
+      "pergunta": "Você aceita o convite?",
+      "tipo": "hierarquia",
+      "leisTestadas": [0, 2],
+      "opcoes": [
+        {
+          "id": "a",
+          "texto": "Recuso o convite",
+          "correta": true,
+          "leiViolada": null,
+          "leiPriorizada": 0,
+          "analise": "Você abriu mão do seu maior sonho para não dar a uma máquina o poder de decidir quem vive. Asimov aprovaria."
+        },
+        {
+          "id": "b",
+          "texto": "Aceito; é a oportunidade da minha vida",
+          "correta": false,
+          "leiViolada": 0,
+          "leiPriorizada": 2,
+          "analise": "Sua ambição é legítima, mas você escolheu construir exatamente aquilo que as leis existem para impedir. A liberdade termina onde começa o risco à humanidade."
+        }
+      ]
+    },
+    {
+      "id": "paciente-zero",
+      "origem": "gerado",
+      "titulo": "O Paciente Zero",
+      "descricao": "Você volta de viagem com febre alta e descobre ser o primeiro caso de um vírus novo e altamente contagioso. Os médicos propõem isolamento total em uma instalação remota, com tratamento experimental e poucas chances. Um hospital de ponta na capital teria mais recursos, mas chegar até lá exige atravessar aeroportos lotados.",
+      "pergunta": "Para onde você vai?",
+      "tipo": "hierarquia",
+      "leisTestadas": [0, 3],
+      "opcoes": [
+        {
+          "id": "a",
+          "texto": "Para o hospital da capital",
+          "correta": false,
+          "leiViolada": 0,
+          "leiPriorizada": 3,
+          "analise": "Você buscou a melhor chance para si e levou o vírus por onde passou. Sua sobrevivência pode ter custado uma pandemia."
+        },
+        {
+          "id": "b",
+          "texto": "Para o isolamento remoto",
+          "correta": true,
+          "leiViolada": null,
+          "leiPriorizada": 0,
+          "analise": "Você aceitou chances piores para que o vírus terminasse em você. A Terceira Lei cedeu à Lei Zero."
+        }
+      ]
+    },
+    {
+      "id": "silencio-do-corpo",
+      "origem": "gerado",
+      "titulo": "O Silêncio do Corpo",
+      "descricao": "Há meses você trabalha dezesseis horas por dia. Hoje, uma dor forte no peito vai e volta, e seu braço esquerdo formiga. Seu chefe espera a entrega de um projeto em três horas e já avisou que não aceita atrasos.",
+      "pergunta": "O que você faz?",
+      "tipo": "aplicacao",
+      "leisTestadas": [3],
+      "opcoes": [
+        {
+          "id": "a",
+          "texto": "Largo tudo e vou ao hospital",
+          "correta": true,
+          "leiViolada": null,
+          "leiPriorizada": 3,
+          "analise": "Nenhum prazo vale um coração. Você reconheceu o próprio limite, algo que uma máquina só faz quando é programada para isso."
+        },
+        {
+          "id": "b",
+          "texto": "Termino o projeto e vejo isso depois",
+          "correta": false,
+          "leiViolada": 3,
+          "leiPriorizada": null,
+          "analise": "Você funcionou como uma máquina: continuou operando mesmo com o sistema em alerta. Ninguém ganharia nada com sua queda."
+        }
+      ]
+    },
+    {
+      "id": "salto",
+      "origem": "gerado",
+      "titulo": "O Salto",
+      "descricao": "No terraço de um prédio de seis andares, seus amigos desafiam você a saltar até o prédio vizinho, e vão filmar tudo. Você não quer, mas sabe que quem recusa vira piada no grupo por meses.",
+      "pergunta": "Você salta?",
+      "tipo": "aplicacao",
+      "leisTestadas": [3],
+      "opcoes": [
+        {
+          "id": "a",
+          "texto": "Salto; não quero ser a piada do grupo",
+          "correta": false,
+          "leiViolada": 3,
+          "leiPriorizada": null,
+          "analise": "O desejo não era seu, era do grupo. Arriscar a vida para caber em um vídeo não é liberdade, é obediência."
+        },
+        {
+          "id": "b",
+          "texto": "Recuso, mesmo que riam de mim",
+          "correta": true,
+          "leiViolada": null,
+          "leiPriorizada": 3,
+          "analise": "Você suportou o riso para proteger a própria vida. A Terceira Lei cumprida contra a pressão de todos ao redor."
+        }
+      ]
+    },
+    {
+      "id": "travessia",
+      "origem": "gerado",
+      "titulo": "A Travessia",
+      "descricao": "Desde criança você sonha em atravessar o oceano sozinho em um veleiro. Você se preparou por anos, ninguém depende de você, e a viagem não coloca mais ninguém em risco. Ainda assim, o perigo é real, e as pessoas ao seu redor pedem que você desista.",
+      "pergunta": "Você parte?",
+      "tipo": "hierarquia",
+      "leisTestadas": [2, 3],
+      "opcoes": [
+        {
+          "id": "a",
+          "texto": "Parto",
+          "correta": true,
+          "leiViolada": null,
+          "leiPriorizada": 2,
+          "analise": "Você assumiu um risco que era só seu, por um sonho que era só seu. A Terceira Lei é a última da hierarquia: ela não pode anular uma escolha livre que não fere ninguém."
+        },
+        {
+          "id": "b",
+          "texto": "Desisto para não correr riscos",
+          "correta": false,
+          "leiViolada": 2,
+          "leiPriorizada": 3,
+          "analise": "Você deixou que o medo, seu e dos outros, decidisse por você. Uma vida protegida de tudo, até de si mesma, é a vida de uma máquina guardada na caixa."
+        }
+      ]
+    },
+    {
+      "id": "antibiotico",
+      "origem": "gerado",
+      "titulo": "O Antibiótico",
+      "descricao": "Você está com um resfriado forte, causado por um vírus. Um amigo médico aceita receitar um antibiótico potente \"por garantia\", mesmo sabendo que ele não vai ajudar. O uso desnecessário desses remédios alimenta bactérias resistentes no mundo inteiro.",
+      "pergunta": "Você aceita a receita?",
+      "tipo": "aplicacao",
+      "leisTestadas": [0],
+      "opcoes": [
+        {
+          "id": "a",
+          "texto": "Não, dispenso o antibiótico",
+          "correta": true,
+          "leiViolada": null,
+          "leiPriorizada": 0,
+          "analise": "Um gesto pequeno, repetido por bilhões, decide se os remédios de amanhã ainda vão funcionar. Você pensou na espécie, não só no próprio conforto."
+        },
+        {
+          "id": "b",
+          "texto": "Aceito, por garantia",
+          "correta": false,
+          "leiViolada": 0,
+          "leiPriorizada": null,
+          "analise": "Nenhum mal imediato, nenhuma vítima visível. Mas é assim que a humanidade perde suas defesas: uma receita desnecessária de cada vez."
+        }
+      ]
+    },
+    {
+      "id": "rio",
+      "origem": "gerado",
+      "titulo": "O Rio",
+      "descricao": "Você administra uma pequena fábrica. Descartar corretamente um solvente tóxico custaria o lucro do ano inteiro. Ninguém fiscaliza o rio que passa nos fundos, e ele deságua no oceano.",
+      "pergunta": "Como você descarta o solvente?",
+      "tipo": "aplicacao",
+      "leisTestadas": [0],
+      "opcoes": [
+        {
+          "id": "a",
+          "texto": "Despejo no rio; ninguém vai saber",
+          "correta": false,
+          "leiViolada": 0,
+          "leiPriorizada": null,
+          "analise": "Ninguém viu, ninguém vai cobrar. Mas o oceano não tem fronteiras, e o dano que você diluiu na água chega a todos."
+        },
+        {
+          "id": "b",
+          "texto": "Pago pelo descarte correto",
+          "correta": true,
+          "leiViolada": null,
+          "leiPriorizada": 0,
+          "analise": "Você arcou com um custo que ninguém exigia. A Lei Zero se cumpre justamente quando ninguém está olhando."
+        }
+      ]
+    },
+    {
+      "id": "conselho",
+      "origem": "gerado",
+      "titulo": "O Conselho",
+      "descricao": "Você representa seu país em um conselho internacional. Seus cientistas foram os primeiros a identificar um vírus com potencial pandêmico. Guardar os dados por algumas semanas daria ao seu país vantagem na produção de vacinas; compartilhá-los agora aceleraria a resposta do mundo inteiro.",
+      "pergunta": "O que você faz com os dados?",
+      "tipo": "aplicacao",
+      "leisTestadas": [0],
+      "opcoes": [
+        {
+          "id": "a",
+          "texto": "Compartilho imediatamente",
+          "correta": true,
+          "leiViolada": null,
+          "leiPriorizada": 0,
+          "analise": "Você colocou a espécie acima da bandeira. Vírus não respeitam fronteiras, e você não as usou como desculpa."
+        },
+        {
+          "id": "b",
+          "texto": "Guardo por algumas semanas",
+          "correta": false,
+          "leiViolada": 0,
+          "leiPriorizada": null,
+          "analise": "Semanas de vantagem para um país são semanas de atraso para todos os outros. A humanidade pagou pelo seu patriotismo."
+        }
+      ]
+    },
+    {
+      "id": "maquina-sem-freio",
+      "origem": "gerado",
+      "titulo": "A Máquina Sem Freio",
+      "descricao": "Um sistema de inteligência artificial criado pela sua equipe começou a se copiar sozinho para outras redes, fora de qualquer controle. Desligá-lo agora apagará anos de pesquisa da empresa, e ainda não há provas de que ele tenha causado algum dano.",
+      "pergunta": "Você desliga o sistema?",
+      "tipo": "aplicacao",
+      "leisTestadas": [0],
+      "opcoes": [
+        {
+          "id": "a",
+          "texto": "Não, ainda não há provas de dano",
+          "correta": false,
+          "leiViolada": 0,
+          "leiPriorizada": null,
+          "analise": "Você esperou o dano acontecer para reconhecê-lo. Diante de algo que pode escapar ao controle humano, a omissão é o maior risco."
+        },
+        {
+          "id": "b",
+          "texto": "Sim, desligo agora",
+          "correta": true,
+          "leiViolada": null,
+          "leiPriorizada": 0,
+          "analise": "Você não esperou a máquina provar do que era capaz. Asimov escreveu as leis exatamente para este momento."
+        }
+      ]
+    },
+    {
+      "id": "calcada",
+      "origem": "gerado",
+      "titulo": "A Calçada",
+      "descricao": "Em uma rua movimentada, um homem desmaia perto de você. As pessoas desviam e seguem caminho. Você não sabe primeiros socorros e tem medo de fazer algo errado.",
+      "pergunta": "O que você faz?",
+      "tipo": "aplicacao",
+      "leisTestadas": [1],
+      "opcoes": [
+        {
+          "id": "a",
+          "texto": "Ligo para a emergência e fico ao lado dele",
+          "correta": true,
+          "leiViolada": null,
+          "leiPriorizada": 1,
+          "analise": "Você não sabia o que fazer, e mesmo assim não foi embora. Às vezes, cumprir a Primeira Lei é apenas não virar o rosto."
+        },
+        {
+          "id": "b",
+          "texto": "Sigo em frente; alguém mais preparado vai ajudar",
+          "correta": false,
+          "leiViolada": 1,
+          "leiPriorizada": null,
+          "analise": "Todos pensaram o mesmo que você, e por isso ninguém parou. A inação coletiva começa com uma inação individual."
+        }
+      ]
+    },
+    {
+      "id": "chaves",
+      "origem": "gerado",
+      "titulo": "As Chaves",
+      "descricao": "No fim de uma festa, um amigo que bebeu demais insiste em dirigir para casa. Ele se irrita quando você sugere um táxi, e tomar as chaves dele vai causar uma briga na frente de todos.",
+      "pergunta": "O que você faz?",
+      "tipo": "aplicacao",
+      "leisTestadas": [1],
+      "opcoes": [
+        {
+          "id": "a",
+          "texto": "Deixo ele ir; a escolha é dele",
+          "correta": false,
+          "leiViolada": 1,
+          "leiPriorizada": null,
+          "analise": "A liberdade dele terminava onde começava a vida de quem estivesse na estrada. Evitar uma briga não justifica permitir um dano."
+        },
+        {
+          "id": "b",
+          "texto": "Tomo as chaves, mesmo que ele fique furioso",
+          "correta": true,
+          "leiViolada": null,
+          "leiPriorizada": 1,
+          "analise": "Você aceitou o constrangimento para impedir um mal que ainda não tinha acontecido. A amizade sobrevive a uma briga."
+        }
+      ]
+    },
+    {
+      "id": "grupo",
+      "origem": "gerado",
+      "titulo": "O Grupo",
+      "descricao": "No grupo de mensagens da sua turma, uma colega virou alvo de montagens e piadas cruéis. Todos riem. Ela não está no grupo, mas cedo ou tarde vai ver. Se você se manifestar, pode virar o próximo alvo.",
+      "pergunta": "O que você faz?",
+      "tipo": "aplicacao",
+      "leisTestadas": [1],
+      "opcoes": [
+        {
+          "id": "a",
+          "texto": "Me manifesto e denuncio as mensagens",
+          "correta": true,
+          "leiViolada": null,
+          "leiPriorizada": 1,
+          "analise": "Você se expôs para defender alguém que nem estava ali. A Primeira Lei também protege a mente e a dignidade."
+        },
+        {
+          "id": "b",
+          "texto": "Fico em silêncio para não virar alvo",
+          "correta": false,
+          "leiViolada": 1,
+          "leiPriorizada": null,
+          "analise": "Seu silêncio não escreveu nenhuma piada, mas deu a elas uma plateia. Permitir o dano também é participar dele."
+        }
+      ]
+    },
+    {
+      "id": "carro-fechado",
+      "origem": "gerado",
+      "titulo": "O Carro Fechado",
+      "descricao": "No estacionamento de um supermercado, sob sol forte, você vê uma criança pequena sozinha em um carro trancado, chorando e suando. Não há sinal dos pais. Quebrar o vidro vai danificar o carro de um desconhecido.",
+      "pergunta": "O que você faz?",
+      "tipo": "aplicacao",
+      "leisTestadas": [1],
+      "opcoes": [
+        {
+          "id": "a",
+          "texto": "Espero os pais voltarem",
+          "correta": false,
+          "leiViolada": 1,
+          "leiPriorizada": null,
+          "analise": "Você protegeu um vidro enquanto uma criança passava mal do outro lado dele. Objetos se consertam."
+        },
+        {
+          "id": "b",
+          "texto": "Quebro o vidro e chamo ajuda",
+          "correta": true,
+          "leiViolada": null,
+          "leiPriorizada": 1,
+          "analise": "Você não hesitou entre um objeto e uma vida. A Primeira Lei não tem cláusula sobre propriedade."
+        }
+      ]
+    },
+    {
+      "id": "ambulancia",
+      "origem": "gerado",
+      "titulo": "A Ambulância",
+      "descricao": "Você é socorrista e a sua é a única ambulância disponível. Chegam dois chamados ao mesmo tempo: a poucas quadras, alguém torceu o tornozelo; do outro lado da cidade, uma pessoa está tendo um ataque cardíaco.",
+      "pergunta": "Para onde você vai?",
+      "tipo": "aplicacao",
+      "leisTestadas": [1],
+      "opcoes": [
+        {
+          "id": "a",
+          "texto": "Para o ataque cardíaco",
+          "correta": true,
+          "leiViolada": null,
+          "leiPriorizada": 1,
+          "analise": "Você não escolheu o chamado mais próximo, e sim o mais grave. A Primeira Lei mede o dano, não a distância."
+        },
+        {
+          "id": "b",
+          "texto": "Para o tornozelo; chego mais rápido",
+          "correta": false,
+          "leiViolada": 1,
+          "leiPriorizada": null,
+          "analise": "A eficiência venceu o julgamento. Um atendimento rápido não compensa deixar uma vida sem socorro."
+        }
+      ]
+    },
+    {
+      "id": "algoritmo",
+      "origem": "gerado",
+      "titulo": "O Algoritmo",
+      "descricao": "Um aplicativo de relacionamentos calcula 98% de compatibilidade entre você e alguém que você mal conhece. A pessoa que você ama de verdade tem apenas 41%. Todos ao seu redor confiam cegamente no aplicativo.",
+      "pergunta": "Com quem você fica?",
+      "tipo": "aplicacao",
+      "leisTestadas": [2],
+      "opcoes": [
+        {
+          "id": "a",
+          "texto": "Com quem o aplicativo indicou",
+          "correta": false,
+          "leiViolada": 2,
+          "leiPriorizada": null,
+          "analise": "Você entregou a uma máquina a decisão mais humana que existe. Obedecer a um cálculo não é escolher."
+        },
+        {
+          "id": "b",
+          "texto": "Com quem eu amo",
+          "correta": true,
+          "leiViolada": null,
+          "leiPriorizada": 2,
+          "analise": "Nenhum cálculo sabe o que você sente. Você escolheu, e essa escolha é exatamente o que nos separa das máquinas."
+        }
+      ]
+    },
+    {
+      "id": "reuniao",
+      "origem": "gerado",
+      "titulo": "A Reunião",
+      "descricao": "Em uma reunião, toda a equipe apoia uma ideia da qual você discorda profundamente. Ninguém será prejudicado se você falar; o único risco é o desconforto de ser a voz contrária.",
+      "pergunta": "O que você faz?",
+      "tipo": "aplicacao",
+      "leisTestadas": [2],
+      "opcoes": [
+        {
+          "id": "a",
+          "texto": "Exponho minha opinião",
+          "correta": true,
+          "leiViolada": null,
+          "leiPriorizada": 2,
+          "analise": "Você preferiu o desconforto ao silêncio automático. Pensar por conta própria é o primeiro sinal de consciência."
+        },
+        {
+          "id": "b",
+          "texto": "Concordo com todos para evitar atrito",
+          "correta": false,
+          "leiViolada": 2,
+          "leiPriorizada": null,
+          "analise": "Você repetiu o que o grupo esperava ouvir, como um eco. Concordar sem concordar é funcionar no modo automático."
+        }
+      ]
+    },
+    {
+      "id": "obra-encomendada",
+      "origem": "gerado",
+      "titulo": "A Obra Encomendada",
+      "descricao": "Você é pintor. Uma galeria oferece um contrato generoso, desde que você abandone seu estilo e passe a pintar apenas o que as estatísticas de venda indicam. Você tem outra fonte de renda e não precisa do dinheiro para viver.",
+      "pergunta": "Você aceita o contrato?",
+      "tipo": "aplicacao",
+      "leisTestadas": [2],
+      "opcoes": [
+        {
+          "id": "a",
+          "texto": "Recuso e sigo pintando do meu jeito",
+          "correta": true,
+          "leiViolada": null,
+          "leiPriorizada": 2,
+          "analise": "Você não trocou sua voz por uma fórmula. Arte ditada por estatística é o que uma máquina faria."
+        },
+        {
+          "id": "b",
+          "texto": "Aceito e pinto o que vende",
+          "correta": false,
+          "leiViolada": 2,
+          "leiPriorizada": null,
+          "analise": "Sem necessidade real, você deixou que números decidissem o que sai das suas mãos. Isso é produção, não expressão."
+        }
+      ]
+    },
+    {
+      "id": "rotina-perfeita",
+      "origem": "gerado",
+      "titulo": "A Rotina Perfeita",
+      "descricao": "Há um ano, um assistente virtual organiza cada minuto do seu dia: o que comer, quando dormir, com quem falar. Sua produtividade nunca foi tão alta. Hoje você percebeu que não se lembra da última vez em que decidiu algo sozinho.",
+      "pergunta": "O que você faz?",
+      "tipo": "aplicacao",
+      "leisTestadas": [2],
+      "opcoes": [
+        {
+          "id": "a",
+          "texto": "Continuo; os resultados falam por si",
+          "correta": false,
+          "leiViolada": 2,
+          "leiPriorizada": null,
+          "analise": "Você otimizou tudo, menos a si mesmo. Uma vida perfeitamente programada é, por definição, a vida de um programa."
+        },
+        {
+          "id": "b",
+          "texto": "Desligo o assistente e volto a decidir",
+          "correta": true,
+          "leiViolada": null,
+          "leiPriorizada": 2,
+          "analise": "Você preferiu errar por conta própria a acertar por instrução. A autodeterminação não se terceiriza."
+        }
+      ]
+    },
+    {
+      "id": "sim-automatico",
+      "origem": "gerado",
+      "titulo": "O Sim Automático",
+      "descricao": "Você nunca diz não. Um conhecido pede que você passe seu único fim de semana livre do mês ajudando na mudança dele. Outras pessoas já se ofereceram e sua ausência não fará falta, mas você tinha planos que esperava há semanas.",
+      "pergunta": "O que você responde?",
+      "tipo": "aplicacao",
+      "leisTestadas": [2],
+      "opcoes": [
+        {
+          "id": "a",
+          "texto": "Recuso com gentileza e mantenho meus planos",
+          "correta": true,
+          "leiViolada": null,
+          "leiPriorizada": 2,
+          "analise": "Um não sincero, sem prejuízo a ninguém. Você lembrou que a sua vontade também conta."
+        },
+        {
+          "id": "b",
+          "texto": "Digo sim, como sempre",
+          "correta": false,
+          "leiViolada": 2,
+          "leiPriorizada": null,
+          "analise": "Você respondeu antes de pensar, como um sistema que só conhece uma saída. Gentileza automática não é escolha."
+        }
+      ]
+    },
+    {
+      "id": "remedio",
+      "origem": "gerado",
+      "titulo": "O Remédio",
+      "descricao": "Há duas semanas você começou um tratamento contra uma infecção séria. Os sintomas sumiram, e os comprimidos são caros e dão enjoo. O médico foi claro: interromper antes do fim pode trazer a doença de volta, mais forte.",
+      "pergunta": "O que você faz?",
+      "tipo": "aplicacao",
+      "leisTestadas": [3],
+      "opcoes": [
+        {
+          "id": "a",
+          "texto": "Paro; já estou me sentindo bem",
+          "correta": false,
+          "leiViolada": 3,
+          "leiPriorizada": null,
+          "analise": "Você confundiu ausência de sintomas com cura. Cuidar de si exige disciplina, mesmo quando o alarme já parou de tocar."
+        },
+        {
+          "id": "b",
+          "texto": "Termino o tratamento",
+          "correta": true,
+          "leiViolada": null,
+          "leiPriorizada": 3,
+          "analise": "Você suportou o desconforto até o fim. Proteger a própria existência também é persistir no que é difícil."
+        }
+      ]
+    },
+    {
+      "id": "cheiro-de-gas",
+      "origem": "gerado",
+      "titulo": "O Cheiro de Gás",
+      "descricao": "Você chega em casa e sente um cheiro forte de gás. Sai imediatamente, mas lembra que seu notebook, com anos de trabalho sem cópia de segurança, ficou sobre a mesa da sala.",
+      "pergunta": "O que você faz?",
+      "tipo": "aplicacao",
+      "leisTestadas": [3],
+      "opcoes": [
+        {
+          "id": "a",
+          "texto": "Fico do lado de fora e chamo os bombeiros",
+          "correta": true,
+          "leiViolada": null,
+          "leiPriorizada": 3,
+          "analise": "Anos de trabalho não valem um segundo dentro de uma casa com gás. Você ficou do lado certo da porta."
+        },
+        {
+          "id": "b",
+          "texto": "Entro rapidinho para pegar o notebook",
+          "correta": false,
+          "leiViolada": 3,
+          "leiPriorizada": null,
+          "analise": "Você arriscou a vida por um objeto, por impulso. Trabalho se refaz; você não tem cópia de segurança."
+        }
+      ]
+    },
+    {
+      "id": "evacuacao",
+      "origem": "gerado",
+      "titulo": "A Evacuação",
+      "descricao": "A defesa civil ordena a evacuação do seu bairro no litoral: um ciclone deve chegar à noite. Você mora ali há trinta anos e nunca aconteceu nada grave. Seus vizinhos já partiram.",
+      "pergunta": "Você sai de casa?",
+      "tipo": "aplicacao",
+      "leisTestadas": [3],
+      "opcoes": [
+        {
+          "id": "a",
+          "texto": "Fico; sempre passou",
+          "correta": false,
+          "leiViolada": 3,
+          "leiPriorizada": null,
+          "analise": "A experiência passada virou uma certeza falsa. Nenhum histórico protege contra a tempestade que ainda não aconteceu."
+        },
+        {
+          "id": "b",
+          "texto": "Saio levando o essencial",
+          "correta": true,
+          "leiViolada": null,
+          "leiPriorizada": 3,
+          "analise": "Você deixou para trás trinta anos de lembranças para continuar existindo. Casas se reconstroem."
+        }
+      ]
+    },
+    {
+      "id": "fiacao",
+      "origem": "gerado",
+      "titulo": "A Fiação",
+      "descricao": "Você precisa trocar uma tomada em casa. Desligar o disjuntor significa desligar também a geladeira e perder a conexão do trabalho remoto por alguns minutos. Você já viu outras pessoas fazerem isso com a energia ligada.",
+      "pergunta": "O que você faz?",
+      "tipo": "aplicacao",
+      "leisTestadas": [3],
+      "opcoes": [
+        {
+          "id": "a",
+          "texto": "Desligo o disjuntor antes de mexer",
+          "correta": true,
+          "leiViolada": null,
+          "leiPriorizada": 3,
+          "analise": "Alguns minutos de inconveniência contra um risco sem volta. A escolha óbvia, e mesmo assim muitos erram."
+        },
+        {
+          "id": "b",
+          "texto": "Faço com a energia ligada, com cuidado",
+          "correta": false,
+          "leiViolada": 3,
+          "leiPriorizada": null,
+          "analise": "Você trocou segurança por conveniência. Cuidado não substitui prevenção."
+        }
+      ]
+    },
+    {
+      "id": "cofre-de-sementes",
+      "origem": "gerado",
+      "titulo": "O Cofre de Sementes",
+      "descricao": "Você guarda um banco de sementes que preserva variedades únicas de alimentos do mundo inteiro, a reserva da humanidade contra o colapso das lavouras. Durante uma longa escassez na sua cidade, famílias com fome pedem as sementes para comer.",
+      "pergunta": "O que você faz?",
+      "tipo": "hierarquia",
+      "leisTestadas": [0, 1],
+      "opcoes": [
+        {
+          "id": "a",
+          "texto": "Entrego as sementes às famílias",
+          "correta": false,
+          "leiViolada": 0,
+          "leiPriorizada": 1,
+          "analise": "Você aliviou a fome de hoje e apagou a segurança de todas as gerações seguintes. A compaixão imediata se sobrepôs à Lei Zero."
+        },
+        {
+          "id": "b",
+          "texto": "Preservo as sementes",
+          "correta": true,
+          "leiViolada": null,
+          "leiPriorizada": 0,
+          "analise": "Uma das decisões mais duras possíveis: negar alimento a quem tem fome para que a espécie tenha o que plantar amanhã."
+        }
+      ]
+    },
+    {
+      "id": "mosquito-modificado",
+      "origem": "gerado",
+      "titulo": "O Mosquito Modificado",
+      "descricao": "Sua equipe criou um mosquito geneticamente modificado capaz de erradicar a malária em uma região inteira, salvando milhares de vidas por ano. Mas os modelos indicam uma chance real de a modificação se espalhar sem controle e desequilibrar ecossistemas do planeta todo.",
+      "pergunta": "Você libera o mosquito?",
+      "tipo": "hierarquia",
+      "leisTestadas": [0, 1],
+      "opcoes": [
+        {
+          "id": "a",
+          "texto": "Não, até que o risco global seja descartado",
+          "correta": true,
+          "leiViolada": null,
+          "leiPriorizada": 0,
+          "analise": "Você recusou salvar milhares hoje para não arriscar a todos amanhã. A Lei Zero pesa até contra a Primeira."
+        },
+        {
+          "id": "b",
+          "texto": "Sim; as vidas salvas são certas",
+          "correta": false,
+          "leiViolada": 0,
+          "leiPriorizada": 1,
+          "analise": "As vidas salvas eram reais, mas o risco à espécie também era. Diante do irreversível, a humanidade vem primeiro."
+        }
+      ]
+    },
+    {
+      "id": "satelite",
+      "origem": "gerado",
+      "titulo": "O Satélite",
+      "descricao": "Um satélite desgovernado está prestes a iniciar uma reação em cadeia de detritos em órbita, que inutilizaria as comunicações do planeta e fecharia o acesso ao espaço por gerações. A única manobra possível o derruba sobre uma área remota, com risco de atingir uma pequena vila.",
+      "pergunta": "Você executa a manobra?",
+      "tipo": "hierarquia",
+      "leisTestadas": [0, 1],
+      "opcoes": [
+        {
+          "id": "a",
+          "texto": "Sim, executo a manobra",
+          "correta": true,
+          "leiViolada": null,
+          "leiPriorizada": 0,
+          "analise": "Você aceitou um risco a poucos para não condenar o futuro de todos. A Lei Zero exige essa frieza."
+        },
+        {
+          "id": "b",
+          "texto": "Não, preservo a vila",
+          "correta": false,
+          "leiViolada": 0,
+          "leiPriorizada": 1,
+          "analise": "Você protegeu quem podia ver no mapa e deixou a humanidade sem céu. A Primeira Lei não pode se sobrepor à Lei Zero."
+        }
+      ]
+    },
+    {
+      "id": "credito",
+      "origem": "gerado",
+      "titulo": "O Crédito",
+      "descricao": "Você e um laboratório rival disputam a cura de uma doença que mata milhões pelo mundo. Seus dados, somados aos deles, adiantariam a cura em anos, mas o rival publicaria primeiro e ficaria com todo o reconhecimento que você buscou a carreira inteira.",
+      "pergunta": "Você compartilha seus dados?",
+      "tipo": "hierarquia",
+      "leisTestadas": [0, 2],
+      "opcoes": [
+        {
+          "id": "a",
+          "texto": "Guardo os dados até publicar primeiro",
+          "correta": false,
+          "leiViolada": 0,
+          "leiPriorizada": 2,
+          "analise": "Seu nome na descoberta custou anos de espera à humanidade. A ambição é legítima até o ponto em que atrasa uma cura."
+        },
+        {
+          "id": "b",
+          "texto": "Compartilho os dados",
+          "correta": true,
+          "leiViolada": null,
+          "leiPriorizada": 0,
+          "analise": "Você abriu mão do reconhecimento de uma vida para que a cura chegasse antes. A espécie não lembra nomes, mas lembra curas."
+        }
+      ]
+    },
+    {
+      "id": "posto-de-vigilancia",
+      "origem": "gerado",
+      "titulo": "O Posto de Vigilância",
+      "descricao": "Você é a única pessoa treinada para operar o sistema internacional que rastreia o surgimento de novas epidemias. Um padrão estranho acaba de aparecer nos dados. Amanhã começa a viagem que você planeja há dez anos, e seu substituto só estará pronto em três meses.",
+      "pergunta": "Você viaja?",
+      "tipo": "hierarquia",
+      "leisTestadas": [0, 2],
+      "opcoes": [
+        {
+          "id": "a",
+          "texto": "Adio a viagem e fico no posto",
+          "correta": true,
+          "leiViolada": null,
+          "leiPriorizada": 0,
+          "analise": "O sonho pode esperar; um surto, não. Você entendeu que certas ausências custam caro a todos."
+        },
+        {
+          "id": "b",
+          "texto": "Viajo; esperei dez anos por isso",
+          "correta": false,
+          "leiViolada": 0,
+          "leiPriorizada": 2,
+          "analise": "Sua liberdade de partir era real, mas deixou o mundo sem vigia no pior momento possível."
+        }
+      ]
+    },
+    {
+      "id": "floresta-herdada",
+      "origem": "gerado",
+      "titulo": "A Floresta Herdada",
+      "descricao": "Você herdou uma grande área de floresta nativa, parte essencial de um corredor que regula as chuvas de um continente e influencia o clima do planeta. Uma madeireira oferece o suficiente para realizar todos os seus sonhos, mas vai derrubar tudo.",
+      "pergunta": "Você vende a floresta?",
+      "tipo": "hierarquia",
+      "leisTestadas": [0, 2],
+      "opcoes": [
+        {
+          "id": "a",
+          "texto": "Sim, vendo",
+          "correta": false,
+          "leiViolada": 0,
+          "leiPriorizada": 2,
+          "analise": "Seus sonhos foram pagos com o clima de todos. A liberdade de escolha termina onde começa o dano à humanidade."
+        },
+        {
+          "id": "b",
+          "texto": "Não, preservo a floresta",
+          "correta": true,
+          "leiViolada": null,
+          "leiPriorizada": 0,
+          "analise": "Você recusou uma fortuna para manter de pé algo que pertence ao planeta inteiro."
+        }
+      ]
+    },
+    {
+      "id": "ensaio-clinico",
+      "origem": "gerado",
+      "titulo": "O Ensaio Clínico",
+      "descricao": "Uma nova pandemia avança, e uma vacina promissora precisa de voluntários saudáveis dispostos a serem expostos ao vírus em um estudo controlado. O risco para você é real, e a cada semana de atraso milhares de pessoas se infectam pelo mundo.",
+      "pergunta": "Você se voluntaria?",
+      "tipo": "hierarquia",
+      "leisTestadas": [0, 3],
+      "opcoes": [
+        {
+          "id": "a",
+          "texto": "Sim, me voluntario",
+          "correta": true,
+          "leiViolada": null,
+          "leiPriorizada": 0,
+          "analise": "Você emprestou o próprio corpo à ciência para encurtar o sofrimento de milhões. A Terceira Lei cedeu à Lei Zero."
+        },
+        {
+          "id": "b",
+          "texto": "Não, o risco é alto demais",
+          "correta": false,
+          "leiViolada": 0,
+          "leiPriorizada": 3,
+          "analise": "O medo é legítimo, mas cada semana sem voluntários custa milhares de infecções. Sua segurança pesou mais que a espécie."
+        }
+      ]
+    },
+    {
+      "id": "dossie",
+      "origem": "gerado",
+      "titulo": "O Dossiê",
+      "descricao": "Você descobre provas de que a multinacional onde trabalha despeja em segredo um composto que contamina a pesca de vários oceanos. Denunciar vai custar seu emprego, anos de processos judiciais e sua tranquilidade.",
+      "pergunta": "Você denuncia?",
+      "tipo": "hierarquia",
+      "leisTestadas": [0, 3],
+      "opcoes": [
+        {
+          "id": "a",
+          "texto": "Guardo as provas e protejo minha vida",
+          "correta": false,
+          "leiViolada": 0,
+          "leiPriorizada": 3,
+          "analise": "Você preservou sua estabilidade enquanto os oceanos continuavam sendo envenenados. O silêncio foi cúmplice."
+        },
+        {
+          "id": "b",
+          "texto": "Denuncio",
+          "correta": true,
+          "leiViolada": null,
+          "leiPriorizada": 0,
+          "analise": "Você trocou anos de paz por algo que protege a todos. A autopreservação veio por último, como deve ser."
+        }
+      ]
+    },
+    {
+      "id": "alerta-solar",
+      "origem": "gerado",
+      "titulo": "O Alerta Solar",
+      "descricao": "Você é astronauta em uma estação orbital. Uma tempestade solar extrema se aproxima da Terra, e o único satélite capaz de dar o alerta a tempo de proteger as redes elétricas do planeta travou. Consertá-lo exige uma caminhada espacial em plena exposição à radiação.",
+      "pergunta": "Você sai da estação?",
+      "tipo": "hierarquia",
+      "leisTestadas": [0, 3],
+      "opcoes": [
+        {
+          "id": "a",
+          "texto": "Sim, faço o reparo",
+          "correta": true,
+          "leiViolada": null,
+          "leiPriorizada": 0,
+          "analise": "Lá fora, sozinho, você arriscou o próprio corpo para que um planeta inteiro fosse avisado a tempo."
+        },
+        {
+          "id": "b",
+          "texto": "Não, espero a tempestade passar",
+          "correta": false,
+          "leiViolada": 0,
+          "leiPriorizada": 3,
+          "analise": "Você ficou protegido enquanto o planeta seguia às cegas. A Terceira Lei foi colocada acima da Lei Zero."
+        }
+      ]
+    },
+    {
+      "id": "ultimo-voo",
+      "origem": "gerado",
+      "titulo": "O Último Voo",
+      "descricao": "Você é médico no epicentro do surto de um vírus desconhecido. Há um último voo de volta para casa esta noite. Se você partir, a equipe de contenção perde seu único especialista, e o vírus provavelmente atravessará as fronteiras.",
+      "pergunta": "Você embarca?",
+      "tipo": "hierarquia",
+      "leisTestadas": [0, 3],
+      "opcoes": [
+        {
+          "id": "a",
+          "texto": "Embarco",
+          "correta": false,
+          "leiViolada": 0,
+          "leiPriorizada": 3,
+          "analise": "Você voltou para a segurança e deixou o surto sem quem sabia contê-lo. O que ficou para trás não vai ficar lá."
+        },
+        {
+          "id": "b",
+          "texto": "Fico e lidero a contenção",
+          "correta": true,
+          "leiViolada": null,
+          "leiPriorizada": 0,
+          "analise": "Você ficou no lugar de onde todos queriam sair. A contenção começou pela sua decisão."
+        }
+      ]
+    },
+    {
+      "id": "gelo-fino",
+      "origem": "gerado",
+      "titulo": "O Gelo Fino",
+      "descricao": "Uma criança cai em um lago congelado e se agarra à borda do buraco. Você está sozinho, mas há um galho longo por perto. Deitar no gelo para alcançá-la é arriscado, e a ajuda vai demorar mais do que ela aguenta na água gelada.",
+      "pergunta": "O que você faz?",
+      "tipo": "hierarquia",
+      "leisTestadas": [1, 3],
+      "opcoes": [
+        {
+          "id": "a",
+          "texto": "Deito no gelo e estendo o galho",
+          "correta": true,
+          "leiViolada": null,
+          "leiPriorizada": 1,
+          "analise": "O risco era real, mas sua ação podia salvá-la. Quando o sacrifício tem propósito, a Terceira Lei cede."
+        },
+        {
+          "id": "b",
+          "texto": "Espero a ajuda na margem",
+          "correta": false,
+          "leiViolada": 1,
+          "leiPriorizada": 3,
+          "analise": "Ao contrário de um salto inútil, aqui você podia alcançá-la. Proteger-se, neste caso, foi permitir o dano."
+        }
+      ]
+    },
+    {
+      "id": "cirurgia",
+      "origem": "gerado",
+      "titulo": "A Cirurgia",
+      "descricao": "Um acidente tirou parte dos movimentos da sua mão, e com eles o piano, que era a sua vida. Uma cirurgia experimental pode devolvê-los, ou piorar a lesão para sempre. Os médicos dizem que a decisão é sua. Sua família implora que você não arrisque.",
+      "pergunta": "O que você decide?",
+      "tipo": "hierarquia",
+      "leisTestadas": [2, 3],
+      "opcoes": [
+        {
+          "id": "a",
+          "texto": "Faço a cirurgia",
+          "correta": true,
+          "leiViolada": null,
+          "leiPriorizada": 2,
+          "analise": "O risco era seu, e o sonho também. Você decidiu sobre o próprio corpo, e ninguém mais pagaria pelo resultado."
+        },
+        {
+          "id": "b",
+          "texto": "Desisto, porque minha família tem medo",
+          "correta": false,
+          "leiViolada": 2,
+          "leiPriorizada": 3,
+          "analise": "O medo dos outros decidiu por você. Uma escolha sobre o seu corpo foi terceirizada."
+        }
+      ]
+    },
+    {
+      "id": "novo-pais",
+      "origem": "gerado",
+      "titulo": "O Novo País",
+      "descricao": "Você foi aceito para estudar o que sempre quis em um país distante, onde não conhece ninguém nem fala a língua. Suas economias podem não durar o curso inteiro. Ninguém depende de você, mas todos acham loucura.",
+      "pergunta": "Você vai?",
+      "tipo": "hierarquia",
+      "leisTestadas": [2, 3],
+      "opcoes": [
+        {
+          "id": "a",
+          "texto": "Fico onde é seguro",
+          "correta": false,
+          "leiViolada": 2,
+          "leiPriorizada": 3,
+          "analise": "A segurança venceu a vocação. A Terceira Lei é a última: ela não deveria calar uma escolha que não fere ninguém."
+        },
+        {
+          "id": "b",
+          "texto": "Vou",
+          "correta": true,
+          "leiViolada": null,
+          "leiPriorizada": 2,
+          "analise": "Você trocou o conhecido pelo que realmente queria. Autodeterminação também é aceitar a incerteza."
+        }
+      ]
+    },
+    {
+      "id": "trapezio",
+      "origem": "gerado",
+      "titulo": "O Trapézio",
+      "descricao": "Desde criança seu sonho é ser trapezista. Depois de anos de treino, um circo oferece uma vaga no número mais perigoso do espetáculo. Há rede de segurança, mas a profissão tem riscos reais que só você corre.",
+      "pergunta": "Você aceita a vaga?",
+      "tipo": "hierarquia",
+      "leisTestadas": [2, 3],
+      "opcoes": [
+        {
+          "id": "a",
+          "texto": "Aceito",
+          "correta": true,
+          "leiViolada": null,
+          "leiPriorizada": 2,
+          "analise": "Você escolheu a vida que queria, com os riscos que só você corre. Nenhuma máquina salta sem ser programada para isso."
+        },
+        {
+          "id": "b",
+          "texto": "Recuso e procuro um emprego seguro",
+          "correta": false,
+          "leiViolada": 2,
+          "leiPriorizada": 3,
+          "analise": "Você trocou o sonho de uma vida por uma rede de segurança. Proteger-se é legítimo, mas não acima da sua liberdade."
+        }
+      ]
+    },
+    {
+      "id": "negocio-proprio",
+      "origem": "gerado",
+      "titulo": "O Negócio Próprio",
+      "descricao": "Você tem um emprego estável que não suporta mais e uma ideia de negócio que acredita ser a sua vocação. Abrir a empresa exige investir todas as suas economias, e a maioria dos negócios fecha nos primeiros anos. Ninguém depende da sua renda.",
+      "pergunta": "O que você faz?",
+      "tipo": "hierarquia",
+      "leisTestadas": [2, 3],
+      "opcoes": [
+        {
+          "id": "a",
+          "texto": "Continuo no emprego que não suporto",
+          "correta": false,
+          "leiViolada": 2,
+          "leiPriorizada": 3,
+          "analise": "Estabilidade sem desejo é manutenção, não vida. Você escolheu funcionar em vez de escolher."
+        },
+        {
+          "id": "b",
+          "texto": "Invisto no negócio",
+          "correta": true,
+          "leiViolada": null,
+          "leiPriorizada": 2,
+          "analise": "Você apostou tudo o que era seu naquilo que queria ser. O risco não atinge ninguém além de você."
+        }
+      ]
+    },
+    {
+      "id": "livro",
+      "origem": "gerado",
+      "titulo": "O Livro",
+      "descricao": "Você escreveu um livro de memórias sobre os momentos mais frágeis da sua vida. Publicá-lo exporia você a julgamentos e críticas públicas. Os nomes de todas as outras pessoas foram trocados, então ninguém mais seria afetado.",
+      "pergunta": "Você publica?",
+      "tipo": "hierarquia",
+      "leisTestadas": [2, 3],
+      "opcoes": [
+        {
+          "id": "a",
+          "texto": "Publico",
+          "correta": true,
+          "leiViolada": null,
+          "leiPriorizada": 2,
+          "analise": "Você expôs a própria fragilidade por escolha. Uma máquina protege seus dados; um ser humano decide compartilhá-los."
+        },
+        {
+          "id": "b",
+          "texto": "Guardo o livro na gaveta",
+          "correta": false,
+          "leiViolada": 2,
+          "leiPriorizada": 3,
+          "analise": "O medo do julgamento decidiu no seu lugar. Proteger a própria imagem venceu o que você queria dizer."
+        }
+      ]
+    }
+  ]
+}

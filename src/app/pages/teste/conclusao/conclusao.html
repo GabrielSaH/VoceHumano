@@ -1,0 +1,82 @@
+<section class="motion-safe:animate-surgir">
+  <p class="text-[0.65rem] uppercase tracking-[0.3em] text-rust-600">[ Análise concluída // Diagnóstico ]</p>
+
+  <!-- Diagnóstico principal -->
+  <div class="relative mt-5 border-2 border-lab-900 bg-white" [style.border-left-color]="diagnostico().cor">
+    <span class="absolute inset-y-0 left-0 w-2" [style.background-color]="diagnostico().cor" aria-hidden="true"></span>
+    <div class="py-8 pl-8 pr-6 sm:py-10 sm:pl-12 sm:pr-10">
+      <p class="text-[0.65rem] uppercase tracking-[0.3em] text-lab-600">O sujeito avaliado é classificado como</p>
+      <h1 class="mt-4 font-display text-3xl leading-tight tracking-[0.12em] text-lab-900 sm:text-5xl">
+        <span class="block">{{ diagnostico().titulo[0] }}</span>
+        <span class="block">{{ diagnostico().titulo[1] }}</span>
+      </h1>
+      <p class="mt-5 max-w-xl text-sm leading-relaxed text-lab-600">{{ diagnostico().veredito }}</p>
+    </div>
+    <span
+      class="absolute right-4 top-4 -rotate-3 border-2 border-rust-600 px-2 py-0.5 text-[0.65rem] tracking-[0.25em] text-rust-600 sm:right-6 sm:top-6"
+    >
+      [ {{ resultado().acertos }}/{{ resultado().totalQuestoes }} ]
+    </span>
+  </div>
+
+  <!-- Resumo -->
+  <h2 class="mt-10 text-[0.65rem] uppercase tracking-[0.3em] text-lab-600">Resumo da avaliação</h2>
+  <dl class="mt-3 grid border-2 border-lab-900 text-xs sm:grid-cols-3">
+    <div class="border-b-2 border-lab-900 p-3 sm:border-b-0 sm:border-r-2">
+      <dt class="text-[0.65rem] tracking-widest text-rust-600">ALINHAMENTO ÀS LEIS</dt>
+      <dd class="mt-1 text-sm text-lab-900">
+        {{ resultado().acertos }} <span class="text-lab-600">/ {{ resultado().totalQuestoes }}</span>
+      </dd>
+    </div>
+    <div class="border-b-2 border-lab-900 p-3 sm:border-b-0 sm:border-r-2">
+      <dt class="text-[0.65rem] tracking-widest text-rust-600">LEI MAIS VIOLADA</dt>
+      <dd class="mt-1 text-sm text-lab-900">{{ maisViolada() }}</dd>
+    </div>
+    <div class="bg-lab-900 p-3 text-lab-50">
+      <dt class="text-[0.65rem] tracking-widest text-wire-yellow">LEI MAIS PRIORIZADA</dt>
+      <dd class="mt-1 text-sm">{{ maisPriorizada() }}</dd>
+    </div>
+  </dl>
+
+  <p class="mt-4 flex items-center gap-2 text-[0.7rem] text-lab-600" aria-live="polite">
+    @switch (envio()) {
+      @case ('enviando') {
+        <span class="size-1.5 animate-pulse bg-rust-600" aria-hidden="true"></span>
+        Enviando ao registro da humanidade...
+      }
+      @case ('enviado') {
+        <span class="size-1.5 bg-lab-900" aria-hidden="true"></span>
+        Resultado incorporado ao registro da humanidade, sem identificação.
+      }
+      @case ('pendente') {
+        <span class="size-1.5 bg-rust-600" aria-hidden="true"></span>
+        Registro coletivo indisponível. O envio será tentado novamente na próxima visita.
+      }
+    }
+  </p>
+
+  <div class="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-6">
+    <button
+      type="button"
+      (click)="exportar()"
+      class="inline-flex items-center justify-center gap-2 border-2 border-lab-900 bg-lab-900 px-5 py-2.5 text-sm uppercase tracking-widest text-lab-50 transition-colors hover:border-rust-600 hover:bg-rust-600 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-rust-600"
+    >
+      <span aria-hidden="true">[</span> Exportar dados <span aria-hidden="true">]</span>
+    </button>
+    <a
+      routerLink="/humanidade"
+      class="text-xs uppercase tracking-widest text-lab-600 underline decoration-rust-500 decoration-2 underline-offset-4 hover:text-rust-600"
+    >
+      Comparar com a humanidade
+    </a>
+    @if (!bloqueado()) {
+      <button
+        type="button"
+        (click)="refazer.emit()"
+        class="text-left text-xs uppercase tracking-widest text-lab-600 underline decoration-rust-500 decoration-2 underline-offset-4 hover:text-rust-600"
+      >
+        Refazer o teste
+      </button>
+    }
+  </div>
+</section>

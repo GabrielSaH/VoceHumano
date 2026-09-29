@@ -1,0 +1,49 @@
+<div class="grid items-center gap-8 sm:grid-cols-[13rem_1fr]">
+  <svg viewBox="0 0 200 200" class="mx-auto w-44 sm:w-full" role="img" [attr.aria-label]="rotulo()">
+    @for (arco of arcos(); track arco.id) {
+      @let apagada = ativa() !== null && ativa() !== arco.id;
+      @if (arco.d) {
+        <!-- contorno na cor da superfície = o respiro de 2px entre fatias -->
+        <path
+          [attr.d]="arco.d"
+          [attr.fill]="arco.cor"
+          stroke="#ffffff"
+          stroke-width="2"
+          stroke-linejoin="round"
+          class="cursor-default transition-opacity duration-200"
+          [attr.opacity]="apagada ? 0.3 : 1"
+          (mouseenter)="ativa.set(arco.id)"
+          (mouseleave)="ativa.set(null)"
+        />
+      } @else {
+        <circle
+          cx="100"
+          cy="100"
+          r="96"
+          [attr.fill]="arco.cor"
+          (mouseenter)="ativa.set(arco.id)"
+          (mouseleave)="ativa.set(null)"
+        />
+      }
+    }
+  </svg>
+
+  <ul class="grid gap-1">
+    @for (fatia of fatias(); track fatia.id) {
+      <li
+        tabindex="0"
+        class="flex items-center gap-3 border-2 px-3 py-2 text-sm outline-none transition-colors"
+        [class]="ativa() === fatia.id ? 'border-lab-900 bg-lab-100' : 'border-transparent'"
+        (mouseenter)="ativa.set(fatia.id)"
+        (mouseleave)="ativa.set(null)"
+        (focus)="ativa.set(fatia.id)"
+        (blur)="ativa.set(null)"
+      >
+        <span class="size-3 shrink-0" [style.background-color]="fatia.cor" aria-hidden="true"></span>
+        <span class="flex-1 text-lab-900">{{ fatia.nome }}</span>
+        <span class="tabular-nums text-lab-900">{{ percentual(fatia.valor) }}</span>
+        <span class="w-16 text-right text-xs tabular-nums text-lab-600">{{ fatia.valor }}</span>
+      </li>
+    }
+  </ul>
+</div>

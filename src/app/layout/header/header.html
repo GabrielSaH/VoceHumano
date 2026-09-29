@@ -1,0 +1,113 @@
+<header class="border-b-2 border-lab-900 bg-lab-50/95 backdrop-blur-sm">
+  <div class="mx-auto flex h-20 max-w-7xl items-center justify-between gap-6 px-4 sm:px-6">
+    <!-- Marca: robô enferrujado + título -->
+    <a
+      routerLink="/"
+      (click)="closeMenu()"
+      class="group flex shrink-0 items-center gap-4 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-rust-600"
+      aria-label="Voce Humano: página inicial"
+    >
+      <span class="relative block size-14 overflow-hidden">
+        <img
+          src="images/robo.png"
+          alt=""
+          width="600"
+          height="723"
+          class="size-full object-cover object-[50%_20%] mix-blend-multiply"
+        />
+        <!-- marcas de mira nos cantos, como um visor de análise -->
+        <span
+          class="pointer-events-none absolute left-0.5 top-0.5 size-1.5 border-l-2 border-t-2 border-rust-600"
+        ></span>
+        <span
+          class="pointer-events-none absolute bottom-0.5 right-0.5 size-1.5 border-b-2 border-r-2 border-rust-600"
+        ></span>
+      </span>
+
+      <span class="h-11 w-0.5 bg-lab-300" aria-hidden="true"></span>
+
+      <span class="font-display text-lg leading-none tracking-[0.18em] text-lab-900 sm:text-xl">
+        <span class="block">VOCE</span>
+        <span class="block">HUMANO</span>
+      </span>
+    </a>
+
+    <!-- Navegação desktop -->
+    <nav class="hidden items-center gap-1 md:flex" aria-label="Principal">
+      @for (item of items(); track item.path; let i = $index) {
+        <a
+          [routerLink]="item.path"
+          routerLinkActive="!bg-lab-900 !text-lab-50"
+          ariaCurrentWhenActive="page"
+          class="group relative flex items-center gap-1.5 px-3 py-2 text-sm uppercase tracking-widest text-lab-900 transition-colors hover:text-rust-600 focus-visible:outline-2 focus-visible:outline-rust-600"
+        >
+          <span class="text-rust-500">[</span>
+          <span class="text-[0.65rem] opacity-60">{{ (i + 1).toString().padStart(2, '0') }}</span>
+          <span>{{ item.label }}</span>
+          <span class="text-rust-500">]</span>
+          <span
+            class="absolute inset-x-3 -bottom-0.5 h-0.5 origin-left scale-x-0 bg-rust-600 transition-transform duration-300 group-hover:scale-x-100"
+            aria-hidden="true"
+          ></span>
+        </a>
+      }
+    </nav>
+
+    <!-- Indicador de análise -->
+    <div
+      class="hidden shrink-0 items-center gap-2 border-l-2 border-lab-300 pl-5 text-[0.7rem] uppercase tracking-widest text-lab-600 lg:flex"
+    >
+      @if (diagnostico(); as diagnostico) {
+        <span class="size-2" [style.background-color]="diagnostico.cor" aria-hidden="true"></span>
+        <span class="text-lab-900">{{ diagnostico.nome }}</span>
+      } @else {
+        <span class="size-2 animate-pulse bg-rust-600" aria-hidden="true"></span>
+        Sujeito em analise
+      }
+    </div>
+
+    <!-- Botão mobile -->
+    <button
+      type="button"
+      (click)="toggleMenu()"
+      class="flex size-11 flex-col items-center justify-center gap-1.5 border-2 border-lab-900 md:hidden"
+      [attr.aria-expanded]="menuOpen()"
+      aria-controls="menu-mobile"
+      aria-label="Abrir menu"
+    >
+      <span
+        class="h-0.5 w-5 bg-lab-900 transition-transform"
+        [class.translate-y-2]="menuOpen()"
+        [class.rotate-45]="menuOpen()"
+      ></span>
+      <span class="h-0.5 w-5 bg-rust-600 transition-opacity" [class.opacity-0]="menuOpen()"></span>
+      <span
+        class="h-0.5 w-5 bg-lab-900 transition-transform"
+        [class.-translate-y-2]="menuOpen()"
+        [class.-rotate-45]="menuOpen()"
+      ></span>
+    </button>
+  </div>
+
+  <!-- Navegação mobile -->
+  @if (menuOpen()) {
+    <nav
+      id="menu-mobile"
+      class="border-b-2 border-lab-900 bg-lab-50 md:hidden"
+      aria-label="Principal"
+    >
+      @for (item of items(); track item.path; let i = $index) {
+        <a
+          [routerLink]="item.path"
+          routerLinkActive="!bg-lab-900 !text-lab-50"
+          ariaCurrentWhenActive="page"
+          (click)="closeMenu()"
+          class="flex items-center gap-3 border-b border-lab-100 px-4 py-4 uppercase tracking-widest text-lab-900 last:border-b-0 hover:bg-lab-100"
+        >
+          <span class="text-xs text-rust-500">[{{ (i + 1).toString().padStart(2, '0') }}]</span>
+          {{ item.label }}
+        </a>
+      }
+    </nav>
+  }
+</header>

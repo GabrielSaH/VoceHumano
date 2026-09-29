@@ -2,11 +2,14 @@
   "name": "voce-humano",
   "version": "0.0.0",
   "scripts": {
-    "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "api": "json-server api/db.json --port 3001",
+    "server": "node server/index.mjs",
+    "backend": "concurrently -n api,server -c yellow,red \"npm:api\" \"npm:server\"",
+    "test:server": "node --test server/registro.test.mjs"
   },
   "private": true,
   "packageManager": "npm@12.1.0",
@@ -25,7 +28,9 @@
     "@angular/cli": "^22.2.0",
     "@angular/compiler-cli": "^22.2.0",
     "@tailwindcss/postcss": "^4.1.12",
+    "concurrently": "^10.0.5",
     "jsdom": "^30.0.0",
+    "json-server": "^1.0.0-beta.15",
     "postcss": "^8.5.3",
     "prettier": "^3.8.1",
     "tailwindcss": "^4.1.12",
