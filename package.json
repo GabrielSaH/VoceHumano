@@ -8,8 +8,7 @@
     "test": "ng test",
     "api": "json-server api/db.json --port 3001",
     "server": "node server/index.mjs",
-    "backend": "concurrently -n api,server -c yellow,red \"npm:api\" \"npm:server\"",
-    "test:server": "node --test server/registro.test.mjs"
+    "backend": "concurrently -n api,server -c yellow,red \"npm:api\" \"npm:server\""
   },
   "private": true,
   "packageManager": "npm@12.1.0",

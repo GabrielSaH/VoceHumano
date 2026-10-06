@@ -10,8 +10,7 @@ const URL_RESULTADOS = '/api/resultados';
 /** Resposta de GET /api/humanidade (ver server/registro.mjs → agregar). */
 export interface EstatisticasHumanidade {
   total: number;
-  /** Fração de escolhas alinhadas às leis, entre 0 e 1. */
-  taxaAcerto: number;
+  taxaAcerto: number; // de 0 a 1
   diagnosticos: Record<Diagnostico, number>;
   violacoesPorLei: ContagemPorLei;
   prioridadesPorLei: ContagemPorLei;

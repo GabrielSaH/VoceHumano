@@ -14,7 +14,6 @@ export interface RespostaRegistrada {
   leiPriorizada: NumeroLei | null;
 }
 
-/** Formato persistido e exportado. Ao mudar a estrutura, incremente `versao`. */
 export interface ResultadoTeste {
   versao: 2;
   id: string;
@@ -25,8 +24,7 @@ export interface ResultadoTeste {
   diagnostico: Diagnostico;
   violacoesPorLei: ContagemPorLei;
   prioridadesPorLei: ContagemPorLei;
-  /** Mais de uma lei em caso de empate; vazio quando nenhuma foi contada. */
-  leisMaisVioladas: NumeroLei[];
+  leisMaisVioladas: NumeroLei[]; // de 0 a 2 elementos
   leisMaisPriorizadas: NumeroLei[];
   respostas: RespostaRegistrada[];
 }
@@ -77,7 +75,6 @@ function contar(leis: (NumeroLei | null)[]): ContagemPorLei {
   return contagem;
 }
 
-/** Leis com a maior contagem (várias em caso de empate; nenhuma se tudo for zero). */
 export function maiores(contagem: ContagemPorLei): NumeroLei[] {
   const max = Math.max(...NUMEROS_LEI.map((lei) => contagem[lei]));
   return max === 0 ? [] : NUMEROS_LEI.filter((lei) => contagem[lei] === max);
