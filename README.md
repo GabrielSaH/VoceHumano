@@ -1,59 +1,90 @@
-# VoceHumano
+VOCE HUMANO
+Teste de Turing inverso inspirado em "Eu, Robô", de Isaac Asimov.
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.2.0.
 
-## Development server
+COMO INICIAR
 
-To start a local development server, run:
+1. Instale as dependências:
+   npm install
 
-```bash
-ng serve
-```
+2. Terminal 1, suba as APIs (json-server com os dilemas + servidor de resultados):
+   npm run backend
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+3. Terminal 2, suba o Angular:
+   npm start
 
-## Code scaffolding
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Portas usadas: 4200 (Angular), 3000 (servidor de resultados), 3001 (json-server).
+O Angular encaminha tudo que começa com /api para a porta 3000 (proxy.conf.json).
 
-```bash
-ng generate component component-name
-```
+Versão de produção (site e API juntos na porta 3000):
+   npm run build
+   npm run backend
+   abrir http://localhost:3000
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
 
-```bash
-ng generate --help
-```
 
-## Building
+ONDE CADA REQUISITO ESTÁ NO PROJETO
 
-To build the project run:
+ESTRUTURA
 
-```bash
-ng build
-```
+- Pelo menos 3 rotas, com menu e destaque da página atual
+  Rotas: src/app/app.routes.ts (/, /leis, /teste, /humanidade, /dilema/:id).
+  Menu: src/app/layout/navigation.ts e src/app/layout/header/header.html.
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+- Rota com parâmetro levando a uma página de detalhe
+  /dilema/:id -> src/app/pages/dilema/dilema.ts
+  O id chega como input() graças ao withComponentInputBinding (src/app/app.config.ts).
+  Para acessar: na página Humanidade, clique em um dos dilemas do gráfico
+  "Os dilemas que mais derrubam" (ex.: /dilema/alavanca-do-trem).
 
-## Running unit tests
+- Rota ** de página não encontrada, dentro do tema.
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+COMPONENTES
 
-```bash
-ng test
-```
+- Pelo menos 2 componentes reutilizáveis recebendo dados por input()
+  GraficoBarras: src/app/pages/humanidade/grafico-barras/ (usado duas vezes na página Humanidade).
+  Questao: src/app/pages/teste/questao/ (usado no teste e na página /dilema/:id, em modo leitura).
+  Também: GraficoPizza (grafico-pizza/) e Progresso (src/app/pages/teste/progresso/).
 
-## Running end-to-end tests
+- Pelo menos 1 componente avisando o pai por output()
+  Questao emite "respondida" para o Teste (src/app/pages/teste/questao/questao.ts).
+  TesteIntro emite "iniciar" e "recarregar"; TesteConclusao emite "refazer".
 
-For end-to-end (e2e) testing, run:
+- Uso de @if, @for com track e @empty
+  @if: em praticamente todas as páginas.
+  @for com track: src/app/pages/teste/progresso/progresso.html, grafico-barras.html, leis.html.
+  @empty: src/app/pages/humanidade/grafico-barras/grafico-barras.html.
 
-```bash
-ng e2e
-```
+ESTADO
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+- Todo dado que muda na tela é signal
 
-## Additional Resources
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- Pelo menos 3 computed fazendo trabalho de verdade
+  src/app/pages/humanidade/humanidade.ts:
+    dilemasMaisErrados (filtra, calcula a taxa de erro, ordena e pega os 8 primeiros),
+    prioridades (soma, percentual por lei e classificação da mais escolhida),
+    maioria (encontra a categoria com mais pessoas).
+
+- Nenhum valor derivado guardado em signal e atualizado na mão
+
+DADOS
+
+- Serviço responsável por buscar os dados, injetado com inject()
+  DilemasService: src/app/data/dilemas.api.ts (lista e busca dilemas).
+  HumanidadeApi: src/app/data/humanidade.api.ts (estatísticas e envio de resultados).
+  
+- Consumo de API com HttpClient ou httpResource
+  httpResource: DilemasService e HumanidadeApi.estatisticas().
+  HttpClient (inject(HttpClient)): HumanidadeApi.enviar() faz o POST do resultado.
+  A API de dilemas é o json-server servindo api/db.json (GET /api/dilemas e /api/dilemas/:id).
+  O servidor de resultados fica em server/index.mjs.
+
+- Tratamento de carregando e de erro na tela
+
+
+FORMULÁRIO
+
+- Formulário com validação e botão desabilitado enquanto inválido
+  Reactive Forms na tela inicial do teste: src/app/pages/teste/intro/intro.ts e intro.html.
