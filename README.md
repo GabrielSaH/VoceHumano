@@ -76,8 +76,7 @@ DADOS
   HumanidadeApi: src/app/data/humanidade.api.ts (estatísticas e envio de resultados).
   
 - Consumo de API com HttpClient ou httpResource
-  httpResource: DilemasService e HumanidadeApi.estatisticas().
-  HttpClient (inject(HttpClient)): HumanidadeApi.enviar() faz o POST do resultado.
+  HumanidadeApi (src/app/data/humanidade.api.ts) e ResultadosStore.
   A API de dilemas é o json-server servindo api/db.json (GET /api/dilemas e /api/dilemas/:id).
   O servidor de resultados fica em server/index.mjs.
 
